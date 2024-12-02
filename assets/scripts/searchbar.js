@@ -16,6 +16,7 @@ function searchBar() {
         ul.style.display = "block"; 
     }
 
+
     for (i = 0; i < li.length; i++) {
         a = li[i].getElementsByTagName("a")[0];
         txtValue = a.textContent || a.innerText;
@@ -28,15 +29,18 @@ function searchBar() {
         }
     }
     
-    document.addEventListener('click', function(event) {
-      let isClickInside = searchBarContent.contains(event.target);
-      if (isClickInside) {
-        ul.style.display = "block";
-      } 
-      
-      else {
+    // Gömmer listan om användaren klickar utanför den
+    document.addEventListener('click', function (event) {
+    let searchBarContent = document.getElementById("search-function");
+    let ul = document.getElementById("searchbar-list");
+
+    if (!searchBarContent.contains(event.target)) {
         ul.style.display = "none";
-      }
+    }
 });
 }
 
+// Gömmer listan efter att användaren har klickat på den
+document.getElementById("searchbar-list").addEventListener('click', function () {
+    this.style.display = "none";
+});

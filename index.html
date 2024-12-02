@@ -12,119 +12,166 @@
       href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
       rel="stylesheet"
     />
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&display=swap"
+      rel="stylesheet"
+    />
   </head>
   <body>
     <main>
+      <!-- Headern högst upp på sidan -->
       <header>
         <nav>
           <article class="logo"><h1>Solaris</h1></article>
           <h2>Examinations<span class="uppgift-style">uppgift</span></h2>
+          <!-- Sök funktion -->
           <section id="search-function">
-            <input id="search-bar-text" type="search" placeholder="Sök..." onkeyup="searchBar()" autocomplete="off">
-            <svg id="search-icon" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" viewBox="0,0,300,150">
-              <g fill="#fffcfc" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" font-size="none" text-anchor="none" style="mix-blend-mode: normal"><g transform="scale(5.12,5.12)"><path d="M21,3c-9.39844,0 -17,7.60156 -17,17c0,9.39844 7.60156,17 17,17c3.35547,0 6.46094,-0.98437 9.09375,-2.65625l12.28125,12.28125l4.25,-4.25l-12.125,-12.09375c2.17969,-2.85937 3.5,-6.40234 3.5,-10.28125c0,-9.39844 -7.60156,-17 -17,-17zM21,7c7.19922,0 13,5.80078 13,13c0,7.19922 -5.80078,13 -13,13c-7.19922,0 -13,-5.80078 -13,-13c0,-7.19922 5.80078,-13 13,-13z"></path></g></g>
-              </svg>
+            <input
+              id="search-bar-text"
+              type="search"
+              placeholder="Sök..."
+              onkeyup="searchBar()"
+              autocomplete="off"
+            />
+            <!-- SVG ikon av ett förstoringsglas  -->
+            <svg
+              id="search-icon"
+              xmlns="http://www.w3.org/2000/svg"
+              x="0px"
+              y="0px"
+              viewBox="0,0,300,150"
+            >
+              <g
+                fill="#fffcfc"
+                fill-rule="nonzero"
+                stroke="none"
+                stroke-width="1"
+                stroke-linecap="butt"
+                stroke-linejoin="miter"
+                stroke-miterlimit="10"
+                stroke-dasharray=""
+                stroke-dashoffset="0"
+                font-family="none"
+                font-weight="none"
+                font-size="none"
+                text-anchor="none"
+                style="mix-blend-mode: normal"
+              >
+                <g transform="scale(5.12,5.12)">
+                  <path
+                    d="M21,3c-9.39844,0 -17,7.60156 -17,17c0,9.39844 7.60156,17 17,17c3.35547,0 6.46094,-0.98437 9.09375,-2.65625l12.28125,12.28125l4.25,-4.25l-12.125,-12.09375c2.17969,-2.85937 3.5,-6.40234 3.5,-10.28125c0,-9.39844 -7.60156,-17 -17,-17zM21,7c7.19922,0 13,5.80078 13,13c0,7.19922 -5.80078,13 -13,13c-7.19922,0 -13,-5.80078 -13,-13c0,-7.19922 5.80078,-13 13,-13z"
+                  ></path>
+                </g>
+              </g>
+            </svg>
 
-              <ul id="searchbar-list">
-                <li><a id="solen">Solen</a></li>
-                <li><a id="merkurius">Merkurius</a></li>
-          
-                <li><a id="venus">Venus</a></li>
-                <li><a id="jorden">Jorden</a></li>
-              
-                <li><a id="mars">Mars</a></li>
-                <li><a id="jupiter">Jupiter</a></li>
+            <!-- En lista som visas när man använder sök funktionen  -->
+            <ul id="searchbar-list">
+              <li><a id="solen">Solen</a></li>
+              <li><a id="merkurius">Merkurius</a></li>
 
-                <li><a id="saturnus">Saturnus</a></li>
-                <li><a id="uranus">Uranus</a></li>
-                <li><a id="neptunus">Neptunus</a></li>
-              </ul>
+              <li><a id="venus">Venus</a></li>
+              <li><a id="jorden">Jorden</a></li>
 
+              <li><a id="mars">Mars</a></li>
+              <li><a id="jupiter">Jupiter</a></li>
+
+              <li><a id="saturnus">Saturnus</a></li>
+              <li><a id="uranus">Uranus</a></li>
+              <li><a id="neptunus">Neptunus</a></li>
+            </ul>
           </section>
         </nav>
       </header>
 
+      <!-- Styling på högra sidan av ramen  -->
       <section id="main-content">
-          <aside id="main-aside">
-            <p>Skapad av William Westergård</p>
-            <section id="box-container">
-              <article id="box-1"></article>
-              <article id="box-2"></article>
-              <article id="box-3"></article>
-            </section>
-          </aside>
-
-
-  <section id="main-container">  
-
-      <section id="planet-container">
-        <section id="name-container">
-        <section id="planet-name"></section>
-        <section id="planet-latin-name"></section>
-      </section>
-      
-        <section id="planet-circumference">
-          <span class="strong">Omkrets:</span>
-        </section>
-
-        <section id="planet-desc"></section>
-        <section id="planet-distance">
-          <span class="strong">Distans:</span>
-        </section>
-
-        <section id="planet-moons">
-          <span class="strong">Månar:</span>
-        </section>
-
-        <section id="planet-orbital-period">
-          <span class="strong">Omloppsperiod:</span>
-        </section>
-
-
-      </section>
-      
-      <section id="planets-frame-container">
-        <section id="planet-frame">
-
-          <section id="planet-type">
-            <span class="strong">Typ:</span>
-            <span id="star-or-planet"></span>
+        <aside id="main-aside">
+          <p>Skapad av William Westergård</p>
+          <section id="box-container">
+            <article id="box-1"></article>
+            <article id="box-2"></article>
+            <article id="box-3"></article>
           </section>
-          
-          <section id="planet-temperature">
-            <span class="strong temp"> </span>
+        </aside>
+
+        <section id="main-container">
+          <section id="planet-container">
+            <!-- Namn  -->
+            <section id="name-container">
+              <section id="planet-name"></section>
+              <section id="planet-latin-name"></section>
+            </section>
+
+            <!-- Information -->
+            <section id="planet-desc-frame">
+              <p>information</p>
+            <section id="planet-desc"></section>
+            <!-- Omkrets  -->
+            <section id="planet-circumference">
+              <span class="strong">Omkrets:</span>
+            </section>
+            </section>
+
+            <section id="distance-moons-info-container">
+              <!-- Distans  -->
+              <section id="planet-distance">
+                <span class="strong">Distans:</span>
+              </section>
+              <!-- Antal månar  -->
+              <section id="planet-moons">
+                <span class="strong">Månar:</span>
+              </section>
           </section>
 
-          <article id="planet-frame-rotation-upper-right"> 
-            <section id="planet-rotation">
-              <span class="rotation-text"> </span>
+          </section>
+
+          <!-- Sektionen på höger sida.   -->
+          <section id="planets-frame-container">
+            <section id="planet-frame">
+              <section id="planet-type">
+                <span class="strong">Typ:</span>
+                <span id="star-or-planet"></span>
+              </section>
+
+              
+            <!-- Omloppsperiod  -->
+            <section id="planet-orbital-period">
             </section>
-          </article>
 
-          <article id="planet-frame-border-lower-left"> </article>
+              <section id="planet-temperature">
+                <span class="strong temp"> </span>
+              </section>
 
-        <section id="planet-next-prev-container">
-          <article id="prev-button"></article>
-          <article id="next-button"></article>
+              <article id="planet-frame-rotation-upper-right">
+                <section id="planet-rotation">
+                  <span class="rotation-text"> </span>
+                </section>
+              </article>
 
+              <!-- Styling på ramen   -->
+              <article id="planet-frame-border-lower-left"></article>
+
+              <!-- Navigeringspilarna på högra sidan  -->
+              <section id="planet-next-prev-container">
+                <article id="prev-button"></article>
+                <article id="next-button"></article>
+              </section>
+            </section>
+          </section>
         </section>
       </section>
-      </section>
-      
 
-    </section>
-  </section>
-    
-    <section id="border-bottom">
-      <article class="border-bottom-inside-content"></article>
-      <article class="border-bottom-inside-smaller"></article>
-      <article class="border-bottom-inside-smaller"></article>
-      <article class="border-bottom-inside-smaller"></article>
-      <article class="border-bottom-inside-smaller"></article>
-    </section>
+      <!-- Styling längst ner på ramen  -->
+      <section id="border-bottom">
+        <article class="border-bottom-inside-content"></article>
+        <article class="border-bottom-inside-smaller"></article>
+        <article class="border-bottom-inside-smaller"></article>
+        <article class="border-bottom-inside-smaller"></article>
+        <article class="border-bottom-inside-smaller"></article>
+      </section>
     </main>
 
     <script src="assets/scripts/planets.js"></script>

@@ -20,17 +20,28 @@ function planetInformation(data) {
     let currentIndex = 0;
     let planetInfo = data.bodies[currentIndex];
     planetsIndex();
-    
+
+
     function planetsIndex() {
 
+
+      
+            let smallerTitles = [1, 6, 8];
         
-        // Information om objekten
-        planetNames.innerHTML = planetInfo.name;
+            if (smallerTitles.includes(currentIndex)) {
+                planetNames.innerHTML = `<span class="smaller-title">${planetInfo.name}</span>`;
+            } else {
+                planetNames.innerHTML = planetInfo.name; 
+            }  
+            
+
         planetLatinNames.innerHTML = planetInfo.latinName;
         planetCircumference.innerHTML =
         `<span class="strong"> Omkrets: </span>${ planetInfo.circumference}</span>`;
         planetMoons.innerHTML + " " + planetInfo.moons;
-        planetOrbitalPeriod.innerHTML + " " + planetInfo.orbitalPeriod;
+        planetOrbitalPeriod.innerHTML =
+        `<span class="orbital-number">${planetInfo.orbitalPeriod}</span> <br> 
+        <span class="orbital-text-strong"> Omlopps</span><span class="orbital-text-light">period </span>`
     
         let rotationNumbers = planetInfo.rotation;
         planetRotation.innerHTML = 
@@ -82,67 +93,76 @@ function planetInformation(data) {
         }  
     document.getElementById("prev-button").addEventListener('click', prevButton);
 
+    
 
         // Sök funktion. Kopplat till listan "#searchbar-list" i HTML filen.
         // När man klickar på ett objekt i listan, 
         // anropas en funktion som ändrar index numret till tillhörande planet.
         function solen() {
                 planetInfo = data.bodies[0];
+                currentIndex = 0;
                 planetsIndex();
             }  
             document.getElementById("solen").addEventListener('click', solen);
 
         function merkurius() {
                 planetInfo = data.bodies[1];
+                currentIndex = 1;
                 planetsIndex();
             }  
             document.getElementById("merkurius").addEventListener('click', merkurius);
 
         function venus() {
             planetInfo = data.bodies[2];
+            currentIndex = 2;
             planetsIndex();
             }  
             document.getElementById("venus").addEventListener('click', venus);
 
         function jorden() {
             planetInfo = data.bodies[3];
+            currentIndex = 3;
             planetsIndex();
             }  
             document.getElementById("jorden").addEventListener('click', jorden);
 
         function mars() {
             planetInfo = data.bodies[4];
+            currentIndex = 4;
             planetsIndex();
             }  
             document.getElementById("mars").addEventListener('click', mars);
 
         function jupiter() {
             planetInfo = data.bodies[5];
+            currentIndex = 5;
             planetsIndex();
             }  
             document.getElementById("jupiter").addEventListener('click', jupiter);
 
         function saturnus() {
             planetInfo = data.bodies[6];
+            currentIndex = 6;
             planetsIndex();
             }  
             document.getElementById("saturnus").addEventListener('click', saturnus);
 
         function uranus() {
             planetInfo = data.bodies[7];
+            currentIndex = 7;
             planetsIndex();
             }  
             document.getElementById("uranus").addEventListener('click', uranus);
 
         function neptunus() {
             planetInfo = data.bodies[8];
+            currentIndex = 8;
             planetsIndex();
             }  
             document.getElementById("neptunus").addEventListener('click', neptunus);
     
-    
-    
-    
+
+      
     }
     
 

@@ -1,5 +1,3 @@
-// Callback funktion som är kopplad till API:n
-fetchData(planetInformation); 
 
 // Variabler för de tomma elementen i HTML koden
 let planetNames = document.getElementById("planet-name");
@@ -13,32 +11,138 @@ let planetRotation = document.getElementById("planet-rotation");
 let planetTemperature = document.getElementById("planet-temperature");
 let planetType = document.getElementById("planet-type");
 
+// Callback funktion som är kopplad till API:n
+fetchData(planetInformation); 
+
+
 // Callback funktion för objekten
 function planetInformation(data) {
-    const planetInfo = data.bodies[0];
+    let currentIndex = 0;
+    let planetInfo = data.bodies[currentIndex];
+    planetsIndex();
+    
+    function planetsIndex() {
 
-    // Information om objekten
-    planetNames.innerHTML += " " + planetInfo.name;
-    planetLatinNames.innerHTML += planetInfo.latinName;
-    planetCircumference.innerHTML += " " + planetInfo.circumference;
-    planetMoons.innerHTML += " " + planetInfo.moons;
-    planetOrbitalPeriod.innerHTML += " " + planetInfo.orbitalPeriod;
-    planetRotation.innerHTML += " " + planetInfo.rotation;
-    planetTemperature.innerHTML += " " + "Dag: " + planetInfo.temp.day + ["&deg;C"];
-    planetTemperature.innerHTML += " " + "Natt: " + planetInfo.temp.night + ["&deg;C"];
-    planetDesc.innerHTML += " " + planetInfo.desc;
+        
+        // Information om objekten
+        planetNames.innerHTML = planetInfo.name;
+        planetLatinNames.innerHTML = planetInfo.latinName;
+        planetCircumference.innerHTML =
+        `<span class="strong"> Omkrets: </span>${ planetInfo.circumference}</span>`;
+        planetMoons.innerHTML + " " + planetInfo.moons;
+        planetOrbitalPeriod.innerHTML + " " + planetInfo.orbitalPeriod;
+    
+        let rotationNumbers = planetInfo.rotation;
+        planetRotation.innerHTML = 
+        ` <span class="rotation-text">Rotation </span> <span class="rotation-numbers-border">${rotationNumbers}</span>`;
+    
+        let tempDay = planetInfo.temp.day; 
+        let tempNight = planetInfo.temp.night; 
+        planetTemperature.innerHTML = 
+            `<span class="strong temp">Temperatur <br><br> </span>
+            <span class="planet-temperature-day"><strong>Dag: </strong>${tempDay}&deg;C</span>
+            <span class="planet-temperature-night"><strong>Natt: </strong>${tempNight}&deg;C</span>`;
 
-    // Ändrar typen om objektets är en stjärna eller planet. 
-    // Det ursprungliga värdet var på engelska.
-    if (planetInfo.type === "star") {
-        let starOrPlanet = document.getElementById("star-or-planet").innerText = "Stjärna"
-        planetType.innerHTML += " ";
-        planetType + starOrPlanet;
+        planetDesc.innerHTML = planetInfo.desc;
+    
+        // Ändrar typen om objektets är en stjärna eller planet. 
+        // Det ursprungliga värdet var på engelska.
+        if (planetInfo.type === "star") {
+            let starOrPlanet = document.getElementById("star-or-planet").innerHTML =
+        `<span style="font-weight:200;"> Stjärna</span>`;
+            planetType + starOrPlanet;
+        }
+        else {
+            let starOrPlanet = document.getElementById("star-or-planet").innerHTML =
+            `<span style="font-weight:200;"> Planet</span>`;
+            planetType + starOrPlanet;
+        }
+     }
+
+     function nextButton() {
+        currentIndex += 1;
+        if  (currentIndex >= data.bodies.length) { 
+            currentIndex = 0;
+        }
+            planetInfo = data.bodies[currentIndex];
+            console.log("Changed planetInfo to:", planetInfo);
+            planetsIndex();
+        }  
+    document.getElementById("next-button").addEventListener('click', nextButton);
+
+
+    function prevButton() {
+        if  (currentIndex === 0) { 
+            currentIndex = 9;
+        }
+        currentIndex -= 1;
+            planetInfo = data.bodies[currentIndex];
+            console.log("Changed planetInfo to:", planetInfo);
+            planetsIndex();
+        }  
+    document.getElementById("prev-button").addEventListener('click', prevButton);
+
+
+        // Sök funktion. Kopplat till listan "#searchbar-list" i HTML filen.
+        // När man klickar på ett objekt i listan, 
+        // anropas en funktion som ändrar index numret till tillhörande planet.
+        function solen() {
+                planetInfo = data.bodies[0];
+                planetsIndex();
+            }  
+            document.getElementById("solen").addEventListener('click', solen);
+
+        function merkurius() {
+                planetInfo = data.bodies[1];
+                planetsIndex();
+            }  
+            document.getElementById("merkurius").addEventListener('click', merkurius);
+
+        function venus() {
+            planetInfo = data.bodies[2];
+            planetsIndex();
+            }  
+            document.getElementById("venus").addEventListener('click', venus);
+
+        function jorden() {
+            planetInfo = data.bodies[3];
+            planetsIndex();
+            }  
+            document.getElementById("jorden").addEventListener('click', jorden);
+
+        function mars() {
+            planetInfo = data.bodies[4];
+            planetsIndex();
+            }  
+            document.getElementById("mars").addEventListener('click', mars);
+
+        function jupiter() {
+            planetInfo = data.bodies[5];
+            planetsIndex();
+            }  
+            document.getElementById("jupiter").addEventListener('click', jupiter);
+
+        function saturnus() {
+            planetInfo = data.bodies[6];
+            planetsIndex();
+            }  
+            document.getElementById("saturnus").addEventListener('click', saturnus);
+
+        function uranus() {
+            planetInfo = data.bodies[7];
+            planetsIndex();
+            }  
+            document.getElementById("uranus").addEventListener('click', uranus);
+
+        function neptunus() {
+            planetInfo = data.bodies[8];
+            planetsIndex();
+            }  
+            document.getElementById("neptunus").addEventListener('click', neptunus);
+    
+    
+    
+    
     }
-    else {
-        let starOrPlanet = document.getElementById("star-or-planet").innerText = "Planet"
-        planetType.innerHTML += " ";
-        planetType + starOrPlanet;
-    }
-}
+    
 

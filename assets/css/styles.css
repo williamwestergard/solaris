@@ -1,4 +1,3 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
 
 * {
   box-sizing: border-box;
@@ -82,7 +81,7 @@ h2 {
   align-items: center;
 }
 
-#search-function [type=text] {
+#search-bar-text[type=search] {
   text-transform: uppercase;
   align-self: center;
   float: right;
@@ -96,6 +95,14 @@ h2 {
   font-size: clamp(.7rem, 1.1vw, 1rem);
   letter-spacing: 1px;
 }
+
+#search-bar-text:active {
+  color:#ffffff;
+  }
+  #search-bar-text:focus {
+    color:#ffffff;
+    }
+
 #search-icon {
   position: relative;
   right:4.5vh;
@@ -182,8 +189,6 @@ h2 {
   background-color: white;
 }
 
-
-
 #border-bottom {
   position: absolute;
   padding:0;
@@ -218,20 +223,214 @@ h2 {
 }
 
 
-
-
-/* Remove to show content */
+#main-container{
+  display:flex;
+  flex-direction: row;
+  justify-content: space-around;
+  position: relative;
+  top:4.5vh;
+}
 #planet-container {
-  display:none;
+  display:flex;
+  flex-direction: column;
+  justify-content: center;
+  width:25vw;
+}
+#name-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 #planet-name {
-  font-size: 3rem;
+  font-family: "Orbitron", sans-serif;
+  font-weight: 400;
+  text-transform: uppercase;
+  font-size: 7rem;
+  letter-spacing: 13px;
 }
 #planet-latin-name {
-  font-size: 1.5rem;
+  text-transform: uppercase;
+  text-align: center;
+  font-size: 1.3rem;
+  letter-spacing: 25px;
+  font-weight: 400;
 }
 
-.strong {
+#planet-frame {
+  position: relative;
+  width:clamp(450px, 40vw, 720px);
+  height:clamp(320px, 31vw, 630px);
+  border:2px solid white;
+  display: flex;
+  flex-direction: column;
+}
+
+#planet-next-prev-container {
+  z-index:100;
+  width:8vw;
+  height:8vh;
+  border-top:2px solid white;
+  border-left:3px solid white;
+  background-color: black;
+  box-shadow: 2px 2px 0 black;
+  position: absolute;
+  bottom:-.2vh;
+  right:-.3vh;
+  display: flex;
+}
+
+#prev-button {
+	width: 0;
+	height: 0;
+  padding-left:1.5vw;
+  margin-top: 2.5vh;
+	border-top: 1vw solid transparent;
+	border-right: 2vw solid #ffffff;
+	border-bottom: 1vw solid transparent;
+  transition: .2s;
+}
+#next-button {
+	width: 0;
+	height: 0;
+  margin-left:1.5vw;
+  margin-top: 2.5vh;
+  border-top:  1vw solid transparent;
+	border-left: 2vw  solid #ffffff;
+	border-bottom: 1vw solid transparent;
+  transition: .2s;
+}
+#prev-button:hover {
+  cursor:pointer;
+  border-top: 1vw solid transparent;
+	border-right: 2vw solid #929292;
+	border-bottom: 1vw solid transparent;
+  transition: .2s;
+}
+#next-button:hover {
+  cursor:pointer;
+  border-top: 1vw solid transparent;
+	border-left: 2vw solid #929292;
+	border-bottom: 1vw solid transparent;
+  transition: .2s;
+}
+
+
+#planet-frame-border-lower-left {
+  z-index:0;
+  width:5.5vw;
+  height:8vh;
+  border-top:4px solid white;
+  background-color: black;
+  box-shadow: -2px 2px 0 black;
+  position: absolute;
+  bottom:-2.8vh;
+  left:-4.2vh;
+  display: flex;
+  transform: rotate(43deg);
+}
+
+#planet-frame-rotation-upper-right{
+  z-index:100;
+  width:15vw;
+  height:6vh;
+  border-left:4px solid white;
+  border-bottom:4px solid white;
+  background-color: black;
+  box-shadow: 2px -2px 0 black;
+  position: absolute;
+  top:-.2vh;
+  right:-.3vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#planet-temperature {
+  text-transform: uppercase;
+  position: absolute;
+  bottom:6vh;
+  text-align: center;
+  align-self: center;
+}
+.strong.temp {
+  letter-spacing: 8px;
+  font-size: .9rem;
   font-weight: 600;
+}
+
+.planet-temperature-day {
+  margin-right:1vw;
+  font-weight: 300;
+  letter-spacing: 1px;
+  font-size: .9rem;
+}
+.planet-temperature-night {
+  margin-left:1vw;
+  font-weight: 300;
+  letter-spacing: 1px;
+  font-size: .9rem;
+}
+
+#planet-rotation {
+  position: relative;
+  top:-.4vh;
+  text-transform: uppercase;
+  display: flex;
+  justify-content: baseline;
+  align-items: center;
+}
+
+.rotation-text {
+  font-weight: 500;
+  letter-spacing: 1px;
+}
+.rotation-numbers-border {
+  padding:.5vh .5vw;
+  margin-left:.4vw;
+  border:3px solid white;
+  font-weight: 200;
+  letter-spacing: 1px;
+}
+#planet-type {
+  text-transform: uppercase;
+  padding:1.5vw;
+  font-size: .9rem;
+  letter-spacing: 6px;
+  font-weight: 300;
+}
+
+
+
+#searchbar-list {
+  z-index: 10000;
+  list-style-type: none;
+  position: absolute;
+  padding: 0;
+  margin: 0;
+  top:8.5vh;
+  display: none;
+}
+
+#searchbar-list li a {
+  border: 1px solid #a4a4a4;
+  margin-top: -1px; /* Prevent double borders */
+  background-color: #0f0f0fdb;
+  padding: 1.7vh 1vw;
+  width:15vw;
+  text-align: center;
+  text-decoration: none;
+  font-size: 1rem;
+  border-radius: 2px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: rgb(255, 255, 255);
+  display: block;
+}
+
+#searchbar-list li a:hover {
+  cursor:pointer;
+  background-color: #1e1e1eec;
+  color:rgb(255, 255, 255);
 }

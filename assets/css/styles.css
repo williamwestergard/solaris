@@ -236,7 +236,7 @@ h2 {
   justify-content: center;
   width:25vw;
   position: relative;
-  margin-top:10vh;
+  margin-top:12vh;
 }
 #name-container {
   display: flex;
@@ -267,7 +267,7 @@ h2 {
 }
 
 #planet-desc {
-  overflow: scroll; 
+  overflow: auto; 
   scrollbar-color: rgb(207, 207, 207) rgba(34, 34, 34, 0.188);
   scrollbar-width: thin;
   font-size:clamp(.73rem, .8vw, .9rem);
@@ -648,18 +648,52 @@ right:0vw;
   margin:auto;
 }
 
+
+
+
+
+#meny-desc-frame {
+  overflow: hidden;
+  border:1px solid white;
+  position: absolute;
+  top:-14vh;
+  right:-5.4vw;
+}
+#meny-desc-frame p {
+  font-size: clamp(.7rem, .9vw, .9rem);
+  text-transform: uppercase;
+  font-family: "Orbitron", sans-serif;
+  padding:.7vh 1.2vh;
+  letter-spacing: 3px;
+}
+#meny {
+  border:1px solid white;
+  padding:2.5vh;
+}
+
+
+.carousel-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  width:28vw;
+  position: relative;
+  left:-.5vw;
+}
+
 .carousel {
   display: flex;
   flex-direction: row;
   position: absolute;
-  top:-9vh; 
   text-transform: uppercase;
   font-weight: 300;
-  font-size: .7rem;
+  font-size: clamp(.7rem, .8vw, 1rem);
   letter-spacing: 1px;
   align-items: center;
   overflow: hidden;
 }
+
 .carousel a {
   text-decoration: none;
   color:white;
@@ -669,8 +703,9 @@ right:0vw;
   display: flex;
   align-items: center;
   overflow: hidden;
-  width: 24vw; /* Adjust width for 4 items */
+  width: 21vw; 
 }
+
 
 .carousel-track {
   display: flex;
@@ -678,19 +713,43 @@ right:0vw;
 }
 
 .carousel-item {
-  flex: 0 0 5vw; /* Adjust width for individual items */
+  flex: 0 0 5vw; 
   text-align: center;
+  transition: .2s;
 }
 
-.arrow {
-  background: none;
-  border: none;
-  font-size: 1.5rem;
-  color:white;
-  cursor: pointer;
-}
-.arrow.right {
+.arrow-left {
   z-index:10000;
-  position: absolute;
+  cursor: pointer;
+  background: none;
+  position: relative;
+  border-top: .35vw solid transparent;
+	border-right: .5vw solid #ffffff;
+	border-bottom: .35vw solid transparent;
+  background-color: black;
+  margin: auto;
+  display: flex;
+  justify-content: center;
+  align-self: center;
+  left:-4.7vw;
+}
+.arrow-right {
+  z-index:10000;
+  cursor: pointer;
+  position:relative;
   right:2vw;
+  background: none;
+  border-top: .35vw solid transparent;
+	border-left: .5vw solid #ffffff;
+	border-bottom: .35vw solid transparent;
+  margin: auto;
+  display: flex;
+  justify-content: center;
+  align-self: center;
+  left:5vw;
+}
+
+.carousel-item:hover {
+  font-weight: 600;
+  transition: .2s;
 }

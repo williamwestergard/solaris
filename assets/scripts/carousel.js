@@ -1,6 +1,6 @@
 const track = document.querySelector('.carousel-track');
 const items = document.querySelectorAll('.carousel-item');
-const itemWidth = items[0].offsetWidth; // Get the width of an item
+const itemWidth = items[0].offsetWidth; 
 let currentIndex = 0;
 
 function moveLeft() {
@@ -11,7 +11,7 @@ function moveLeft() {
 }
 
 function moveRight() {
-  if (currentIndex < items.length - 4) { // Ensure at least 4 items remain visible
+  if (currentIndex < items.length - 4) { 
     currentIndex++;
     updateCarousel();
   }

@@ -1,0 +1,11 @@
+@media all and (min-width:1800px) {
+    #planet-frame {
+        width:700px;
+        height:600px;
+      }
+
+      #planet-frame-border-lower-left {
+        bottom:-2.9vh;
+        left:-4.2vh;
+      }
+}

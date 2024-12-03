@@ -485,17 +485,38 @@ right:0vw;
 
 
 #distance-moons-info-container {
+  overflow-x: auto;
+  scrollbar-color: rgb(207, 207, 207) rgba(34, 34, 34, 0.188);
+  scrollbar-width: thin;
   z-index: 10000;
   border:1px solid white;
-  padding:1vh;
+  padding:1vh 1vw ;
   text-transform: uppercase;
   border-radius: 15px;
   letter-spacing: 5px;
   width:30vw;
   display: flex;
   flex-direction: row;
-  justify-content: space-around;
+  justify-content: flex-start;
+  align-items: center;
+  align-content: center;
   background-color: black;
+}
+.moons-title {
+  font-size: clamp(.6rem, .8vw, .9rem);
+  font-weight: 400;
+}
+.moons-style {
+  font-weight: 200;
+  font-size:clamp(.6rem, .8vw, .9rem);
+  letter-spacing: 1px;
+}
+
+#distance-circ-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+
 }
 #planet-circumference {
   text-transform: uppercase;
@@ -505,6 +526,15 @@ right:0vw;
   right:0;
   text-align: right;
 }
+#planet-distance {
+  text-transform: uppercase;
+  padding:.2vh 1vh;
+  font-size:clamp(.4rem, .7vw, .7rem);
+  letter-spacing: 2px;
+  right:0;
+  text-align: left;
+}
+
 
 /* Ändrar titlarnas storlek som har fler bokstäver  */ 
 .smaller-title {
@@ -715,7 +745,6 @@ right:0vw;
   color:white;
 }
 .carousel-track a {
-  pointer-events: auto;
   z-index: 1000000;  
 cursor:pointer;
 }

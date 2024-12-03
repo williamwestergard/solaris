@@ -60,7 +60,84 @@ function planetInformation(data) {
             }
             
             
+            // Menyns länkar ändrar font-weight om de är aktiva.
+            function carouselActive() {
+                if (currentIndex === 0) {
+                    document.getElementById("carousel-solen").style.fontWeight="600";
+                    document.getElementById("carousel-solen").style.pointerEvents="none";
+                }
+                else {
+                    document.getElementById("carousel-solen").style.fontWeight="300";
+                    document.getElementById("carousel-solen").style.pointerEvents="auto";
+                }
+                if (currentIndex === 1) {
+                    document.getElementById("carousel-merkurius").style.fontWeight="600";
+                    document.getElementById("carousel-merkurius").style.pointerEvents="none";
+                }
+                else {
+                    document.getElementById("carousel-merkurius").style.fontWeight="300";
+                    document.getElementById("carousel-merkurius").style.pointerEvents="auto";
+                }
+                if (currentIndex === 2) {
+                    document.getElementById("carousel-venus").style.fontWeight="600";
+                    document.getElementById("carousel-venus").style.pointerEvents="none";
+                }
+                else {
+                    document.getElementById("carousel-venus").style.fontWeight="300";
+                    document.getElementById("carousel-venus").style.pointerEvents="auto";
+                }
+                if (currentIndex === 3) {
+                    document.getElementById("carousel-jorden").style.fontWeight="600";
+                    document.getElementById("carousel-jorden").style.pointerEvents="none";
+                }
+                else {
+                    document.getElementById("carousel-jorden").style.fontWeight="300";
+                    document.getElementById("carousel-jorden").style.pointerEvents="auto";
+                }
+                if (currentIndex === 4) {
+                    document.getElementById("carousel-mars").style.fontWeight="600";
+                    document.getElementById("carousel-mars").style.pointerEvents="none";
+                }
+                else {
+                    document.getElementById("carousel-mars").style.fontWeight="300";
+                    document.getElementById("carousel-mars").style.pointerEvents="auto";
+                }
 
+                if (currentIndex === 5) {
+                    document.getElementById("carousel-jupiter").style.fontWeight="600";
+                    document.getElementById("carousel-jupiter").style.pointerEvents="none";
+                }
+                else {
+                    document.getElementById("carousel-jupiter").style.fontWeight="300";
+                    document.getElementById("carousel-jupiter").style.pointerEvents="auto";
+                }
+                if (currentIndex === 6) {
+                    document.getElementById("carousel-saturnus").style.fontWeight="600";
+                    document.getElementById("carousel-saturnus").style.pointerEvents="none";
+                }
+                else {
+                    document.getElementById("carousel-saturnus").style.fontWeight="300";
+                    document.getElementById("carousel-saturnus").style.pointerEvents="auto";
+                }
+
+                if (currentIndex === 7) {
+                    document.getElementById("carousel-uranus").style.fontWeight="600";
+                    document.getElementById("carousel-uranus").style.pointerEvents="none";
+                }
+                else {
+                    document.getElementById("carousel-uranus").style.fontWeight="300";
+                    document.getElementById("carousel-uranus").style.pointerEvents="auto";
+                }
+                if (currentIndex === 8) {
+                    document.getElementById("carousel-neptunus").style.fontWeight="600";
+                    document.getElementById("carousel-neptunus").style.pointerEvents="none";
+                }
+                else {
+                    document.getElementById("carousel-neptunus").style.fontWeight="300";
+                    document.getElementById("carousel-neptunus").style.pointerEvents="auto";
+                } 
+            }
+            carouselActive();
 
 
         planetLatinNames.innerHTML = planetInfo.latinName;
@@ -121,76 +198,95 @@ function planetInformation(data) {
         }  
     document.getElementById("prev-button").addEventListener('click', prevButton);
 
-    
 
         // Sök funktion. Kopplat till listan "#searchbar-list" i HTML filen.
         // När man klickar på ett objekt i listan, 
         // anropas en funktion som ändrar index numret till tillhörande planet.
-        function solen() {
-                planetInfo = data.bodies[0];
-                currentIndex = 0;
-                planetsIndex();
-            }  
-            document.getElementById("solen").addEventListener('click', solen);
+        function solen(event) {
+            event.stopPropagation(); 
+            planetInfo = data.bodies[0];
+            currentIndex = 0;
+            planetsIndex();
+        }
+        document.getElementById("solen").addEventListener('click', solen);
+        document.getElementById("carousel-solen").addEventListener('click', solen);
 
-        function merkurius() {
+        function merkurius(event) {
+                event.stopPropagation(); 
                 planetInfo = data.bodies[1];
                 currentIndex = 1;
                 planetsIndex();
             }  
             document.getElementById("merkurius").addEventListener('click', merkurius);
+            document.getElementById("carousel-merkurius").addEventListener('click', merkurius);
 
-        function venus() {
+        function venus(event) {
+            event.stopPropagation(); 
             planetInfo = data.bodies[2];
             currentIndex = 2;
             planetsIndex();
             }  
             document.getElementById("venus").addEventListener('click', venus);
+            document.getElementById("carousel-venus").addEventListener('click', venus);
+            
 
-        function jorden() {
+        function jorden(event) {
+            event.stopPropagation(); 
             planetInfo = data.bodies[3];
             currentIndex = 3;
             planetsIndex();
             }  
             document.getElementById("jorden").addEventListener('click', jorden);
+            document.getElementById("carousel-jorden").addEventListener('click', jorden);
 
-        function mars() {
+        function mars(event) {
+            event.stopPropagation(); 
             planetInfo = data.bodies[4];
             currentIndex = 4;
             planetsIndex();
             }  
             document.getElementById("mars").addEventListener('click', mars);
+            document.getElementById("carousel-mars").addEventListener('click', mars);
 
-        function jupiter() {
+        function jupiter(event) {
+            event.stopPropagation(); 
             planetInfo = data.bodies[5];
             currentIndex = 5;
             planetsIndex();
             }  
             document.getElementById("jupiter").addEventListener('click', jupiter);
+            document.getElementById("carousel-jupiter").addEventListener('click', jupiter);
 
-        function saturnus() {
+        function saturnus(event) {
+            event.stopPropagation(); 
             planetInfo = data.bodies[6];
             currentIndex = 6;
             planetsIndex();
             }  
             document.getElementById("saturnus").addEventListener('click', saturnus);
+            document.getElementById("carousel-saturnus").addEventListener('click', saturnus);
 
-        function uranus() {
+        function uranus(event) {
+            event.stopPropagation(); 
             planetInfo = data.bodies[7];
             currentIndex = 7;
             planetsIndex();
             }  
             document.getElementById("uranus").addEventListener('click', uranus);
+            document.getElementById("carousel-uranus").addEventListener('click', uranus);
 
-        function neptunus() {
+        function neptunus(event) {
+            event.stopPropagation(); 
             planetInfo = data.bodies[8];
             currentIndex = 8;
             planetsIndex();
             }  
             document.getElementById("neptunus").addEventListener('click', neptunus);
-    
-
+            document.getElementById("carousel-neptunus").addEventListener('click', neptunus);
       
+
+            
+
     }
     
 

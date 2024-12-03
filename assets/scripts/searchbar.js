@@ -1,7 +1,6 @@
 
 function searchBar() {
     let searchBarFunction = document.getElementById("search-bar-text");
-    let searchBarContent = document.getElementById("search-function");
     let input, filter, ul, li, a, i, txtValue;
     input = searchBarFunction;
     filter = input.value.toUpperCase();
@@ -43,4 +42,5 @@ function searchBar() {
 // Gömmer listan efter att användaren har klickat på den
 document.getElementById("searchbar-list").addEventListener('click', function () {
     this.style.display = "none";
+    document.getElementById("search-bar-text").value ="";
 });

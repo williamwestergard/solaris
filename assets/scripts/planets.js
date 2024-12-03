@@ -34,6 +34,32 @@ function planetInformation(data) {
                 planetNames.innerHTML = planetInfo.name; 
             }  
             
+            // Visar planeterna i CSS format om det tillhör rätt index nummer
+            //Solen
+            if (currentIndex === 0) {
+                document.getElementById("sun-planet-css-container").style.display="block";
+            } 
+            else {
+                document.getElementById("sun-planet-css-container").style.display="none";
+            }
+            //Merkurkius
+            if (currentIndex === 1) {
+                document.getElementById("merkurius-planet-css-container").style.display="block";
+            } 
+            else {
+                document.getElementById("merkurius-planet-css-container").style.display="none";
+            }
+            //Venus
+              if (currentIndex === 2) {
+                document.getElementById("venus-planet-css-container").style.display="block";
+            } 
+            else {
+                document.getElementById("venus-planet-css-container").style.display="none";
+            }
+            
+            
+
+
 
         planetLatinNames.innerHTML = planetInfo.latinName;
         planetCircumference.innerHTML =

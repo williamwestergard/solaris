@@ -296,6 +296,8 @@ h2 {
   border:2px solid white;
   display: flex;
   flex-direction: column;
+  background: rgb(0,0,0);
+  background: linear-gradient(345deg, rgba(0,0,0,1) 11%, rgba(15,15,15,1) 100%);
 }
 
 #planet-next-prev-container {
@@ -315,35 +317,35 @@ h2 {
 #prev-button {
 	width: 0;
 	height: 0;
-  padding-left:1.5vw;
+  padding-left:1.65vw;
   margin-top: 2.5vh;
-	border-top: 1vw solid transparent;
-	border-right: 2vw solid #ffffff;
-	border-bottom: 1vw solid transparent;
+	border-top: .9vw solid transparent;
+	border-right: 1.7vw solid #ffffff;
+	border-bottom: .9vw solid transparent;
   transition: .2s;
 }
 #next-button {
 	width: 0;
 	height: 0;
-  margin-left:1.5vw;
+  margin-left:1.55vw;
   margin-top: 2.5vh;
-  border-top:  1vw solid transparent;
-	border-left: 2vw  solid #ffffff;
-	border-bottom: 1vw solid transparent;
+  border-top:  .9vw solid transparent;
+	border-left: 1.7vw  solid #ffffff;
+	border-bottom: .9vw solid transparent;
   transition: .2s;
 }
 #prev-button:hover {
   cursor:pointer;
-  border-top: 1vw solid transparent;
-	border-right: 2vw solid #929292;
-	border-bottom: 1vw solid transparent;
+  border-top: .9vw solid transparent;
+	border-right: 1.7vw solid #929292;
+	border-bottom: .9vw solid transparent;
   transition: .2s;
 }
 #next-button:hover {
   cursor:pointer;
-  border-top: 1vw solid transparent;
-	border-left: 2vw solid #929292;
-	border-bottom: 1vw solid transparent;
+  border-top: .9vw solid transparent;
+	border-left: 1.7vw solid #929292;
+	border-bottom: .9vw solid transparent;
   transition: .2s;
 }
 
@@ -508,17 +510,107 @@ h2 {
 .orbital-number{
   position: relative;
   left:1vw;
-  font-size: 4.5rem;
+  font-size: clamp(3rem, 3.8vw, 4.5rem);
 }
 .orbital-text-strong {
-  font-size: .9rem;
+  font-size: clamp(.6rem, .8vw, .9rem);
   font-weight: 500;
   letter-spacing: 1px;
   text-transform: uppercase;
 }
 .orbital-text-light {
-  font-size: .9rem;
+  font-size: clamp(.6rem, .8vw, .9rem);
   font-weight: 200;
   letter-spacing: 1px;
   text-transform: uppercase;
+}
+
+
+/* Planeter CSS */
+/* Solen */
+#sun-planet-css-container {
+  display:none;
+  margin:auto;
+  position:absolute;
+  top:0vh;
+  left:4vw;
+}
+#sun-planet-outer-ring {
+  width:62vh;
+  height:62vh;
+  border:3px solid #bc884c04;
+  border-radius:100%;
+  box-shadow: 0px 0px 25px #ff3a170a;
+  display:flex;
+  justify-content: center;
+  align-items: center;
+}
+#sun-planet-middle-ring {
+  width:52vh;
+  height:52vh;
+  border:3px solid #bc884c17;
+  border-radius:100%;
+  box-shadow: 0px 0px 25px #ff3a170f;
+  margin:auto;
+  display:flex;
+  justify-content: center;
+  align-items: center;
+}
+#sun-planet-closest-ring {
+  width:43vh;
+  height:43vh;
+  border:3px solid #bc884c35;
+  border-radius:100%;
+  box-shadow: 0px 0px 25px #ff3a1717;
+  margin:auto;
+  display:flex;
+  justify-content: center;
+  align-items: center;
+}
+#sun-planet {
+  width:27vh;
+  height:27vh;
+  background: linear-gradient(326deg, rgba(218,255,185,1) 10%, #ffcd273f 40%);
+  background-color: #ffec7e;
+  border-radius:100%;
+  box-shadow: 0px 0px 28px #f96103ca, inset 0px 0px 24px #FF7817, 0px 0px 58px #f92c036c;
+  margin:auto;
+}
+
+
+/* Merkurius */
+#merkurius-planet-css-container {
+  display:none;
+  margin:auto;
+  position:absolute;
+  top:25vh;
+  left:16vw;
+}
+#merkurius-planet {
+  width:12vh;
+  height:12vh;
+  background: linear-gradient(150deg, rgb(180, 180, 180) 20%, rgb(16, 16, 16) 70%);
+  background-color: #cdcdcd;
+  border-radius:100%;
+  box-shadow: -15px 0px 28px #7878783b, inset 0px 0px 20px #000000, inset 5px 5px 5px #ffffffce, 0px 0px 50px #82828244;
+  margin:auto;
+}
+
+
+/* Venus */
+#venus-planet-css-container {
+  display:none;
+  margin:auto;
+  position:absolute;
+  top:20vh;
+  left:14vw;
+}
+#venus-planet {
+  width:23vh;
+  height:23vh;
+  background: linear-gradient(120deg, rgba(255, 255, 243, 0.517) 20%, #000000 70%);
+  background-color: #dfd0ad;
+  border-radius:100%;
+  box-shadow: 0px 0px 18px #a9a8a80d, inset 0px 0px 20px #000000, 0px 0px 58px #82828209;
+  margin:auto;
 }

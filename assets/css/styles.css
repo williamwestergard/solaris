@@ -249,7 +249,7 @@ h2 {
   font-family: "Orbitron", sans-serif;
   font-weight: 400;
   text-transform: uppercase;
-  font-size: clamp(4rem, 5.9vw, 7rem);
+  font-size: clamp(4rem, 5.6vw, 7rem);
   letter-spacing: 13px;
   position: relative;
   left:3vw;
@@ -258,24 +258,31 @@ h2 {
 #planet-latin-name {
   text-transform: uppercase;
   text-align: center;
-  font-size: clamp(1rem, 1.3vw, 1.3rem);
+  font-size: clamp(1rem, 1.2vw, 1.3rem);
   letter-spacing: clamp(15px, 1.5vw, 25px);
   font-weight: 400;
   position: relative;
   left:3vw;
   top:-3.3vh;
 }
+
 #planet-desc {
-  overflow: auto;
+  overflow: scroll; 
   scrollbar-color: rgb(207, 207, 207) rgba(34, 34, 34, 0.188);
   scrollbar-width: thin;
-  font-size:clamp(.6rem, .8vw, .9rem);
-  line-height: 2.5vh;
+  font-size:clamp(.73rem, .8vw, .9rem);
+  line-height: 2.7vh;
   border:1px solid white;
   padding:4vh 5vh;
   width:30vw;
   height:25vh;
 }
+#planet-desc::-webkit-scrollbar-thumb {
+  background-color: rgb(207, 207, 207); 
+}
+
+
+
 #planet-desc-frame {
   width:30.1vw;
   border:1px solid white;
@@ -288,11 +295,15 @@ h2 {
   letter-spacing: 3px;
 }
 
-
+#planets-frame-container {
+position: relative;
+top:-.5vh;
+right:0vw;
+}
 #planet-frame {
   position: relative;
-  width:clamp(450px, 40vw, 720px);
-  height:clamp(320px, 31vw, 630px);
+  width:clamp(490px, 30vw, 720px);
+  height:clamp(460px, 21vw, 630px);
   border:2px solid white;
   display: flex;
   flex-direction: column;
@@ -354,30 +365,31 @@ h2 {
   z-index:0;
   width:5.5vw;
   height:8vh;
-  border-top:4px solid white;
+  border-top:3px solid white;
   background-color: black;
   box-shadow: -2px 2px 0 black;
   position: absolute;
-  bottom:-2.8vh;
-  left:-4.2vh;
+  bottom:-3.3vh;
+  left:-4vh;
   display: flex;
   transform: rotate(43deg);
 }
 
 #planet-frame-rotation-upper-right{
   z-index:100;
-  width:15vw;
+  width:10vw;
   height:6vh;
-  border-left:4px solid white;
-  border-bottom:4px solid white;
+  border-left:3px solid white;
+  border-bottom:3px solid white;
   background-color: black;
   box-shadow: 2px -2px 0 black;
   position: absolute;
   top:-.2vh;
-  right:-.3vh;
+  right:-.2vh;
   display: flex;
   justify-content: center;
   align-items: center;
+  transition: .3s;
 }
 
 #planet-temperature {
@@ -423,7 +435,7 @@ h2 {
 .rotation-numbers-border {
   padding:.5vh .5vw;
   margin-left:.4vw;
-  border:3px solid white;
+  border:2px solid white;
   font-weight: 200;
   letter-spacing: 1px;
   font-size: clamp(.6rem, .85vw, 1rem);
@@ -496,7 +508,7 @@ h2 {
 
 /* Ändrar titlarnas storlek som har fler bokstäver  */ 
 .smaller-title {
-  font-size:clamp(3.8rem, 5vw, 6rem);
+  font-size:clamp(3.6rem, 4.7vw, 6rem);
   letter-spacing: clamp(0px, 0.3vw, 5px);
 }
 
@@ -510,19 +522,39 @@ h2 {
 .orbital-number{
   position: relative;
   left:1vw;
+  top:0vh;
   font-size: clamp(3rem, 3.8vw, 4.5rem);
+  animation:orbitalAnimatiton .8s forwards;
+  animation-timing-function: ease-out;
 }
 .orbital-text-strong {
   font-size: clamp(.6rem, .8vw, .9rem);
   font-weight: 500;
   letter-spacing: 1px;
+  position: relative;
+  top:0vh;
   text-transform: uppercase;
+  animation: orbitalAnimatitonText .8s forwards;
+  animation-timing-function: ease-in-out;
 }
 .orbital-text-light {
   font-size: clamp(.6rem, .8vw, .9rem);
   font-weight: 200;
   letter-spacing: 1px;
+  position: relative;
+  top:0vh;
   text-transform: uppercase;
+  animation:orbitalAnimatitonText .8s forwards;
+  animation-timing-function: ease-in-out;
+}
+@keyframes orbitalAnimatiton {
+  0% {top:2vh; opacity:0%};
+  50% {opacity:0%};
+  100% {top:0vh; opacity:100%};
+}
+@keyframes orbitalAnimatitonText  {
+  15% {top:2vh; opacity:0%};
+  100% {top:0vh; opacity:100%};
 }
 
 
@@ -532,8 +564,9 @@ h2 {
   display:none;
   margin:auto;
   position:absolute;
-  top:0vh;
-  left:4vw;
+  top:1vh;
+  left:3vw;
+  transition: .3s;
 }
 #sun-planet-outer-ring {
   width:62vh;

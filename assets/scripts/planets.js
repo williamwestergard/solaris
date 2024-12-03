@@ -38,9 +38,11 @@ function planetInformation(data) {
             //Solen
             if (currentIndex === 0) {
                 document.getElementById("sun-planet-css-container").style.display="block";
+                document.getElementById("planet-frame-rotation-upper-right").style.width="15.5vw";
             } 
             else {
                 document.getElementById("sun-planet-css-container").style.display="none";
+                document.getElementById("planet-frame-rotation-upper-right").style.width="10vw";
             }
             //Merkurkius
             if (currentIndex === 1) {

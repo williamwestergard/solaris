@@ -694,10 +694,6 @@ right:0vw;
   overflow: hidden;
 }
 
-.carousel a {
-  text-decoration: none;
-  color:white;
-}
 
 .carousel {
   display: flex;
@@ -716,7 +712,14 @@ right:0vw;
   flex: 0 0 5vw; 
   text-align: center;
   transition: .2s;
+  color:white;
 }
+.carousel-track a {
+  pointer-events: auto;
+  z-index: 1000000;  
+cursor:pointer;
+}
+
 
 .arrow-left {
   z-index:10000;

@@ -202,8 +202,7 @@ function planetInformation(data) {
         // Sök funktion. Kopplat till listan "#searchbar-list" i HTML filen.
         // När man klickar på ett objekt i listan, 
         // anropas en funktion som ändrar index numret till tillhörande planet.
-        function solen(event) {
-            event.stopPropagation(); 
+        function solen() {
             planetInfo = data.bodies[0];
             currentIndex = 0;
             planetsIndex();
@@ -211,8 +210,7 @@ function planetInformation(data) {
         document.getElementById("solen").addEventListener('click', solen);
         document.getElementById("carousel-solen").addEventListener('click', solen);
 
-        function merkurius(event) {
-                event.stopPropagation(); 
+        function merkurius() {
                 planetInfo = data.bodies[1];
                 currentIndex = 1;
                 planetsIndex();
@@ -220,8 +218,7 @@ function planetInformation(data) {
             document.getElementById("merkurius").addEventListener('click', merkurius);
             document.getElementById("carousel-merkurius").addEventListener('click', merkurius);
 
-        function venus(event) {
-            event.stopPropagation(); 
+        function venus() {
             planetInfo = data.bodies[2];
             currentIndex = 2;
             planetsIndex();
@@ -230,8 +227,7 @@ function planetInformation(data) {
             document.getElementById("carousel-venus").addEventListener('click', venus);
             
 
-        function jorden(event) {
-            event.stopPropagation(); 
+        function jorden() {
             planetInfo = data.bodies[3];
             currentIndex = 3;
             planetsIndex();
@@ -239,8 +235,7 @@ function planetInformation(data) {
             document.getElementById("jorden").addEventListener('click', jorden);
             document.getElementById("carousel-jorden").addEventListener('click', jorden);
 
-        function mars(event) {
-            event.stopPropagation(); 
+        function mars() {
             planetInfo = data.bodies[4];
             currentIndex = 4;
             planetsIndex();
@@ -248,8 +243,7 @@ function planetInformation(data) {
             document.getElementById("mars").addEventListener('click', mars);
             document.getElementById("carousel-mars").addEventListener('click', mars);
 
-        function jupiter(event) {
-            event.stopPropagation(); 
+        function jupiter() {
             planetInfo = data.bodies[5];
             currentIndex = 5;
             planetsIndex();
@@ -257,8 +251,7 @@ function planetInformation(data) {
             document.getElementById("jupiter").addEventListener('click', jupiter);
             document.getElementById("carousel-jupiter").addEventListener('click', jupiter);
 
-        function saturnus(event) {
-            event.stopPropagation(); 
+        function saturnus() {
             planetInfo = data.bodies[6];
             currentIndex = 6;
             planetsIndex();
@@ -266,8 +259,7 @@ function planetInformation(data) {
             document.getElementById("saturnus").addEventListener('click', saturnus);
             document.getElementById("carousel-saturnus").addEventListener('click', saturnus);
 
-        function uranus(event) {
-            event.stopPropagation(); 
+        function uranus() {
             planetInfo = data.bodies[7];
             currentIndex = 7;
             planetsIndex();
@@ -275,8 +267,7 @@ function planetInformation(data) {
             document.getElementById("uranus").addEventListener('click', uranus);
             document.getElementById("carousel-uranus").addEventListener('click', uranus);
 
-        function neptunus(event) {
-            event.stopPropagation(); 
+        function neptunus() {
             planetInfo = data.bodies[8];
             currentIndex = 8;
             planetsIndex();

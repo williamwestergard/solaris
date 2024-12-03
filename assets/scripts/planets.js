@@ -140,10 +140,31 @@ function planetInformation(data) {
             carouselActive();
 
 
+
+            
         planetLatinNames.innerHTML = planetInfo.latinName;
+        
+        planetDistance.innerHTML =
+        `<span class="strong"> Distans: </span>${planetInfo.distance}</span>`;
         planetCircumference.innerHTML =
-        `<span class="strong"> Omkrets: </span>${ planetInfo.circumference}</span>`;
-        planetMoons.innerHTML + " " + planetInfo.moons;
+        `<span class="strong"> Omkrets: </span>${planetInfo.circumference}</span>`;
+
+        planetMoons.innerHTML =
+        `<span class="strong"> Månar: </span><span class="moons-style">${planetInfo.moons}</span>`;
+
+
+        let moonSpace = ". ";
+        let moonInfo = `<span class="moons-title"> Månar: </span>`; 
+        for (let i = 0; i < planetInfo.moons.length; i++) {
+            moonInfo += `<span class="moons-style">${planetInfo.moons[i]}${moonSpace}</span>`;
+        }
+        planetMoons.innerHTML = moonInfo;
+        
+           
+
+
+
+
         planetOrbitalPeriod.innerHTML =
         `<span class="orbital-number">${planetInfo.orbitalPeriod}</span> <br> 
         <span class="orbital-text-strong"> Omlopps</span><span class="orbital-text-light">period </span>`

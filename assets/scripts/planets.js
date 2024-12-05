@@ -139,53 +139,6 @@ function planetInformation(data) {
             }
             carouselActive();
 
-
-            // Menu pilarna
-            const track = document.querySelector('.carousel-track');
-            const items = document.querySelectorAll('.carousel-item');
-            const itemWidth = items[0].offsetWidth; 
-            let currentMenuItem = 0;
-        
-            function moveLeft() {
-                if (currentMenuItem > 0) {
-                    currentMenuItem--;
-                  updateCarousel();
-                }
-              }
-              document.getElementById("menu-arrow-left").addEventListener('click', moveLeft);
-
-              function moveRight() {
-                if (currentMenuItem < items.length - 4)  { 
-                  currentMenuItem++;
-                  updateCarousel();
-                }
-              }
-              document.getElementById("menu-arrow-right").addEventListener('click', moveRight);
-
-
-              // Pilarna nere till höger kopplar ihop till menyn för att bläddra listan.
-              function menuOnNextClick() {
-                    if (currentIndex > 3)  { 
-                        moveRight();
-                    }
-                }
-                document.getElementById("next-button").addEventListener('click', menuOnNextClick);
-
-                function menuOnPrevClick() {
-                    if (currentIndex > 3)  { 
-                    moveLeft();
-                    }
-                }
-                document.getElementById("prev-button").addEventListener('click', menuOnPrevClick);
-    
-                
-         
-              
-              function updateCarousel() {
-                const offset = -currentMenuItem * itemWidth;
-                track.style.transform = `translateX(${offset}px)`;
-              }
-
             
         planetLatinNames.innerHTML = planetInfo.latinName;
         
@@ -247,7 +200,6 @@ function planetInformation(data) {
             currentIndex = 0;
         }
             planetInfo = data.bodies[currentIndex];
-            console.log("Changed planetInfo to:", planetInfo);
             planetsIndex();
         }  
     document.getElementById("next-button").addEventListener('click', nextButton);
@@ -255,14 +207,17 @@ function planetInformation(data) {
 
     function prevButton() {
         if  (currentIndex === 0) { 
-            currentIndex = 9;
+            currentIndex = 0;
         }
-        currentIndex -= 1;
+        else {
+            currentIndex -= 1;
             planetInfo = data.bodies[currentIndex];
-            console.log("Changed planetInfo to:", planetInfo);
             planetsIndex();
+        }
         }  
     document.getElementById("prev-button").addEventListener('click', prevButton);
+
+
 
 
         // Sök funktion. Kopplat till listan "#searchbar-list" i HTML filen.
@@ -271,6 +226,7 @@ function planetInformation(data) {
         function solen() {
             planetInfo = data.bodies[0];
             currentIndex = 0;
+            carouselScrolltostart();
             planetsIndex();
         }
         document.getElementById("solen").addEventListener('click', solen);
@@ -279,6 +235,7 @@ function planetInformation(data) {
         function merkurius() {
                 planetInfo = data.bodies[1];
                 currentIndex = 1;
+                carouselScrolltostart();
                 planetsIndex();
             }  
             document.getElementById("merkurius").addEventListener('click', merkurius);
@@ -287,6 +244,7 @@ function planetInformation(data) {
         function venus() {
             planetInfo = data.bodies[2];
             currentIndex = 2;
+            carouselScrolltostart();
             planetsIndex();
             }  
             document.getElementById("venus").addEventListener('click', venus);
@@ -296,6 +254,7 @@ function planetInformation(data) {
         function jorden() {
             planetInfo = data.bodies[3];
             currentIndex = 3;
+            carouselScrolltostart();
             planetsIndex();
             }  
             document.getElementById("jorden").addEventListener('click', jorden);
@@ -304,6 +263,7 @@ function planetInformation(data) {
         function mars() {
             planetInfo = data.bodies[4];
             currentIndex = 4;
+            carouselScrolltoMars()
             planetsIndex();
             }  
             document.getElementById("mars").addEventListener('click', mars);
@@ -312,6 +272,7 @@ function planetInformation(data) {
         function jupiter() {
             planetInfo = data.bodies[5];
             currentIndex = 5;
+            carouselScrolltoEnd();
             planetsIndex();
             }  
             document.getElementById("jupiter").addEventListener('click', jupiter);
@@ -320,6 +281,7 @@ function planetInformation(data) {
         function saturnus() {
             planetInfo = data.bodies[6];
             currentIndex = 6;
+            carouselScrolltoEnd();
             planetsIndex();
             }  
             document.getElementById("saturnus").addEventListener('click', saturnus);
@@ -328,6 +290,7 @@ function planetInformation(data) {
         function uranus() {
             planetInfo = data.bodies[7];
             currentIndex = 7;
+            carouselScrolltoEnd();
             planetsIndex();
             }  
             document.getElementById("uranus").addEventListener('click', uranus);
@@ -336,6 +299,8 @@ function planetInformation(data) {
         function neptunus() {
             planetInfo = data.bodies[8];
             currentIndex = 8;
+            carouselScrolltoEnd();
+            moveRightNextButton();
             planetsIndex();
             }  
             document.getElementById("neptunus").addEventListener('click', neptunus);
@@ -343,6 +308,80 @@ function planetInformation(data) {
       
 
             
+        
+        // Menu pilarna
+        const track = document.querySelector('.carousel-track');
+        const items = document.querySelectorAll('.carousel-item');
+        const itemWidth = items[0].offsetWidth; 
+
+         let currentMenuItem = 0;
+         
+    
+         function moveRight() {
+            if (currentMenuItem < items.length - 4) {
+                currentMenuItem++;
+                updateCarousel();
+            }
+        }
+
+        function moveRightNextButton() {
+            if (currentMenuItem < items.length - 4) {
+                currentMenuItem++;
+                updateCarousel();
+            }
+            else if (currentIndex === 8) {
+                currentMenuItem = -1;
+            }
+        }
+
+        function moveLeft() {
+            if (currentMenuItem > 0) {
+                currentMenuItem--;
+              updateCarousel();
+            }
+            else if (currentMenuItem === -1) {
+                currentMenuItem = 5;
+                currentMenuItem--;
+              updateCarousel();
+            }
+          }
+
+          // Menyn skrollar till första raden om söker efter solen, merkurius, venus eller jorden
+          function carouselScrolltostart() {
+            if (currentMenuItem > 3) {
+                currentMenuItem = 0;
+              updateCarousel();
+            }
+          }
+            /* Menyn skrollar till sista raden av menyn om man söker efter 
+            jupiter, saturnus, uranus eller neptunus */
+            function carouselScrolltoEnd() {
+            if (currentMenuItem < 3) {
+                currentMenuItem = 4;
+                updateCarousel();
+            }
+            }
+            /* Menyn skrollar till mars om man söker efter det. 
+              Mars är i mitten av menyn och syns inte om man skrollar till första eller sista raden. */
+             function carouselScrolltoMars() {
+                if (currentMenuItem > -1) {
+                    currentMenuItem = 4;
+                  updateCarousel();
+                }
+              }
+    
+           document.getElementById("menu-arrow-left").addEventListener('click', moveLeft);
+           document.getElementById("menu-arrow-right").addEventListener('click', moveRight);
+
+           // Pilarna nere till höger kopplar ihop till menyn för att bläddra listan.
+             document.querySelector(".next-button-carousel").addEventListener('click', moveRightNextButton);
+             document.querySelector(".prev-button-carousel").addEventListener('click', moveLeft);
+ 
+           
+           function updateCarousel() {
+             const offset = -currentMenuItem * itemWidth;
+             track.style.transform = `translateX(${offset}px)`;
+           }
 
     }
     

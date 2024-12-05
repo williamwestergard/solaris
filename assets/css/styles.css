@@ -743,7 +743,7 @@ right:0vw;
   display: flex;
   align-items: center;
   overflow: hidden;
-  width: 21vw; 
+  width: 23vw; 
 }
 
 
@@ -753,7 +753,7 @@ right:0vw;
 }
 
 .carousel-item {
-  flex: 0 0 5vw; 
+  flex: 0 0 5.4vw; 
   text-align: center;
   transition: .2s;
   color:white;
@@ -777,7 +777,7 @@ cursor:pointer;
   display: flex;
   justify-content: center;
   align-self: center;
-  left:-4.7vw;
+  left:-5.2vw;
 }
 .arrow-right {
   z-index:10000;

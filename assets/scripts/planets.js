@@ -25,7 +25,7 @@ function planetInformation(data) {
     function planetsIndex() {
 
 
-      
+        
             let smallerTitles = [1, 6, 8];
         
             if (smallerTitles.includes(currentIndex)) {
@@ -140,6 +140,51 @@ function planetInformation(data) {
             carouselActive();
 
 
+            // Menu pilarna
+            const track = document.querySelector('.carousel-track');
+            const items = document.querySelectorAll('.carousel-item');
+            const itemWidth = items[0].offsetWidth; 
+            let currentMenuItem = 0;
+        
+            function moveLeft() {
+                if (currentMenuItem > 0) {
+                    currentMenuItem--;
+                  updateCarousel();
+                }
+              }
+              document.getElementById("menu-arrow-left").addEventListener('click', moveLeft);
+
+              function moveRight() {
+                if (currentMenuItem < items.length - 4)  { 
+                  currentMenuItem++;
+                  updateCarousel();
+                }
+              }
+              document.getElementById("menu-arrow-right").addEventListener('click', moveRight);
+
+
+              // Pilarna nere till höger kopplar ihop till menyn för att bläddra listan.
+              function menuOnNextClick() {
+                    if (currentIndex > 3)  { 
+                        moveRight();
+                    }
+                }
+                document.getElementById("next-button").addEventListener('click', menuOnNextClick);
+
+                function menuOnPrevClick() {
+                    if (currentIndex > 3)  { 
+                    moveLeft();
+                    }
+                }
+                document.getElementById("prev-button").addEventListener('click', menuOnPrevClick);
+    
+                
+         
+              
+              function updateCarousel() {
+                const offset = -currentMenuItem * itemWidth;
+                track.style.transform = `translateX(${offset}px)`;
+              }
 
             
         planetLatinNames.innerHTML = planetInfo.latinName;

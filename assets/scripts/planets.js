@@ -17,7 +17,14 @@ fetchData(planetInformation);
 function hideStart(){
     document.getElementById("startpage").style.display="none";
     document.getElementById("main").style.display="block";
+    document.getElementById("intro-overlay").style.display = "block";
 }
+
+function hideTutorial() {
+    document.getElementById("intro-overlay").style.display = "none";
+    document.getElementById("popup").style.display = "none";
+}
+
 
 
 // Callback funktion för objekten

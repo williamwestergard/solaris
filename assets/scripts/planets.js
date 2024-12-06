@@ -14,6 +14,11 @@ let planetType = document.getElementById("planet-type");
 // Callback funktion som är kopplad till API:n
 fetchData(planetInformation); 
 
+function hideStart(){
+    document.getElementById("startpage").style.display="none";
+    document.getElementById("main").style.display="block";
+}
+
 
 // Callback funktion för objekten
 function planetInformation(data) {

@@ -258,6 +258,13 @@
 
 
     <script> 
+
+    setTimeout(() => {
+      document.getElementById("intro-overlay").style.display = "block";
+      document.getElementById("popup").style.display = "block";
+    }, "1000");
+
+
       function hideOverlay() {
         document.getElementById("intro-overlay").style.display = "none";
         document.getElementById("popup").style.display = "none";

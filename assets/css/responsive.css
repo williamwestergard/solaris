@@ -28,3 +28,369 @@
       }
       
 }
+
+
+/* Responsivt för mobil storlekar */
+@media all and (max-width:700px) {
+  #planet-frame {
+      width:700px;
+      height:600px;
+    }
+
+    #planet-frame-border-lower-left {
+      display: none;
+    }
+    
+nav {
+  display: none;
+}
+
+.logo {
+  display: none;
+}
+
+h1 {
+  letter-spacing: 2px;
+  align-self: center;
+  text-align: center;
+  font-size: clamp(1.2rem, 1.5vw, 1.8rem);
+  font-weight: 500;
+  text-transform: uppercase;
+}
+
+h2 {
+  position: relative;
+  right: 0vw;
+  font-size: clamp(2rem, 4vw, 4.7rem);
+  font-weight: 700;
+  text-transform: uppercase;
+  font-style: italic;
+  padding:.5vh 2vw;
+  border:none;
+}
+.uppgift-style {
+  display: none;
+}
+
+#search-bar-text[type=search] {
+  display: none;
+}
+
+main {
+  overflow: auto;
+  border:none;
+  width:100%;
+  height:auto;
+}
+
+#main-content {
+  width:100%;
+  position: relative;
+  top:3vh;
+  border:none;
+}
+#main-aside {
+ display: none;
+}
+
+
+
+#main-container{
+  display:flex;
+  flex-direction: column-reverse;
+  justify-content: space-around;
+  position: relative;
+  top:4.5vh;
+}
+#planet-container {
+  display:flex;
+  flex-direction: column;
+  justify-content: center;
+  width:95vw;
+  position: relative;
+  margin-top:1vh;
+}
+#name-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top:7vh;
+  position: relative;
+  top:3vh;
+}
+
+#planet-name {
+  font-family: "Orbitron", sans-serif;
+  font-weight: 400;
+  text-transform: uppercase;
+  font-size: clamp(3rem, 5.6vw, 5rem);
+  letter-spacing: 13px;
+  position: relative;
+  left:-5vw;
+  top:-4vh;
+}
+#planet-latin-name {
+  text-transform: uppercase;
+  text-align: center;
+  font-size: clamp(.7rem, 1.2vw, .9rem);
+  letter-spacing: clamp(15px, 1.5vw, 25px);
+  font-weight: 400;
+  position: relative;
+  left:-5vw;
+  top:-4.3vh;
+}
+
+#planet-desc {
+  overflow: auto; 
+  scrollbar-color: rgb(207, 207, 207) rgba(34, 34, 34, 0.188);
+  scrollbar-width: thin;
+  font-size:clamp(.6rem, .8vw, 1rem);
+  line-height: 2.2vh;
+  padding:2vh 3vh;
+  width:90vw;
+  height:25vh;
+}
+
+#planet-desc-frame {
+  width:80vw;
+  margin-bottom:2vh;
+}
+#planet-desc-frame p {
+  text-transform: uppercase;
+  font-family: "Orbitron", sans-serif;
+  padding:.7vh 1.2vh;
+  letter-spacing:3px;
+  font-size:clamp(.6rem, .9vw, .7rem);
+}
+
+#planets-frame-container {
+position: relative;
+margin-top:12vh;
+right:0vw;
+}
+#planet-frame {
+  position: relative;
+  width:auto;
+  height:clamp(460px, 21vw, 630px);
+  border:none;
+  display: flex;
+  flex-direction: column;
+  background: rgb(0,0,0);
+  background: linear-gradient(345deg, rgba(0,0,0,1) 11%, rgba(15,15,15,1) 100%);
+}
+
+#planet-next-prev-container {
+  z-index:100;
+  width:8vw;
+  height:6vh;
+  border:none;
+  background-color: none;
+  box-shadow: 2px -2px 0 none;
+  position: absolute;
+  bottom:-3vh;
+  right:50vw;
+  display: flex;
+}
+
+#prev-button {
+	width: 0;
+	height: 0;
+  padding-left:1.65vw;
+  margin-top: 2.5vh;
+	border-top: 4.9vw solid transparent;
+	border-right: 6.7vw solid #ffffff;
+	border-bottom: 4.9vw solid transparent;
+}
+
+#popup {
+  display:none;
+ filter: opacity(0%);
+}
+
+#arrow-down-popup {
+  filter: opacity(0%);
+  }
+  #intro-overlay {
+    filter: opacity(0%);
+  }
+
+
+  #next-button {
+    width: 0;
+    height: 0;
+    margin-left:4.55vw;
+    margin-top: 2.5vh;
+    border-top: 4.9vw solid transparent;
+    border-left: 6.7vw solid #ffffff;
+    border-bottom: 4.9vw solid transparent;
+    transition: .2s;
+  }
+
+  #planet-frame-border-lower-left {
+    z-index:0;
+    width:5.5vw;
+    height:8vh;
+    border-top:none;
+    background-color: none;
+  }
+  
+  #planet-frame-rotation-upper-right{
+   display:none;
+  }
+ 
+#planet-type {
+  text-transform: uppercase;
+  padding:3.5vw;
+  font-size: clamp(.5rem, .8vw, .9rem);
+  letter-spacing: 6px;
+  font-weight: 300;
+}
+
+
+#planet-orbital-period {
+  padding:6vw;
+}
+
+
+/* Planeter CSS */
+/* Solen */
+#sun-planet-css-container {
+  display:none;
+  margin:auto;
+  position:absolute;
+  top:-5vh;
+  left:14vw;
+  transition: .3s;
+}
+
+/* Merkurius */
+#merkurius-planet-css-container {
+  display:none;
+  margin:auto;
+  position:absolute;
+  top:20vh;
+  left:36vw;
+}
+
+/* Venus */
+#venus-planet-css-container {
+  display:none;
+  margin:auto;
+  position:absolute;
+  top:15vh;
+  left:24vw;
+}
+
+
+/* Jorden */
+#jorden-planet-css-container {
+  display:none;
+  margin:auto;
+  position:absolute;
+  top:14vh;
+  left:23.5vw;
+}
+
+
+/* Mars */
+#mars-planet-css-container {
+  display:none;
+  margin:auto;
+  position:absolute;
+  top:18vh;
+  left:25vw;
+}
+
+
+/* Jupiter */
+#jupiter-planet-css-container {
+  display:none;
+  margin:auto;
+  position:absolute;
+  top:11vh;
+  left:12vw;
+}
+/* Saturnus */
+#saturnus-planet-css-container {
+  display:none;
+  margin:auto;
+  position:absolute;
+  top:14vh;
+  left:15vw;
+}
+#saturnus-ring {
+  width:45vh;
+  height:2.3vh;
+  background: rgb(232, 217, 181);
+ box-shadow: 0px 0px 18px #d7d0d04a, inset -10px -10px 20px #3e2818, inset 10px 10px 10px #fffddf8b, 0px 0px 28px #fdebd11a;
+  border-radius:100%;
+  margin:auto;
+  position:absolute;
+  top:9vh;
+  left:-13vw;
+  mix-blend-mode: lighten;
+  transform: rotate(-30deg);
+}
+/* Uranus */
+#uranus-planet-css-container {
+  display:none;
+  margin:auto;
+  position:absolute;
+  top:15vh;
+  left:17vw;
+}
+
+#uranus-ring {
+  width:35vh;
+  height:1.1vh;
+  background: rgb(234, 231, 224);
+ box-shadow: 0px 0px 18px #d0d3d74a, inset -10px -10px 20px #34425c, inset 10px 10px 10px #fffddf8b, 0px 0px 28px #d1c0a941;
+  border-radius:100%;
+  margin:auto;
+  position:absolute;
+  top:10vh;
+  left:-12vw;
+  mix-blend-mode: lighten;
+  transform: rotate(-30deg);
+}
+
+/* Neptunus */
+#neptunus-planet-css-container {
+  display:none;
+  margin:auto;
+  position:absolute;
+  top:17vh;
+  left:17vw;
+}
+
+
+.moons-title {
+  display: none;
+}
+.moons-style {
+  display: none;
+}
+.moons-style-longer {
+  display: none;
+}
+
+
+
+#distance-circ-container {
+  display: none;
+}
+#planet-circumference {
+  display: none;
+}
+#planet-distance {
+  display: none;
+}
+#border-bottom {
+display:none;
+}
+
+
+
+
+}

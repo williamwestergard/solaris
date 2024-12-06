@@ -22,12 +22,10 @@ function planetInformation(data) {
     planetsIndex();
 
 
+    // Huvudfunktionen som är kopplat till API:n
     function planetsIndex() {
-
-
-        
+            // Objekt med längre namn får en klass som har mindre text storlek.
             let smallerTitles = [1, 6, 8];
-        
             if (smallerTitles.includes(currentIndex)) {
                 planetNames.innerHTML = `<span class="smaller-title">${planetInfo.name}</span>`;
             } else {
@@ -102,12 +100,6 @@ function planetInformation(data) {
                 else {
                     document.getElementById("neptunus-planet-css-container").style.display="none";
                 }
-
-            
-
-
-
-
             
             
             // Menyns länkar ändrar font-weight om de är aktiva.
@@ -189,18 +181,18 @@ function planetInformation(data) {
             }
             carouselActive();
 
-            
+        // Latinska namnet  
         planetLatinNames.innerHTML = planetInfo.latinName;
-    
+        // Planetens distans
         planetDistance.innerHTML =
         `<span class="strong-distance"> Distans: </span>${planetInfo.distance}</span>`;
+         // Planetens omkrets
         planetCircumference.innerHTML =
         `<span class="strong-distance"> Omkrets: </span>${planetInfo.circumference}</span>`;
-
+         // Planetens månar
         planetMoons.innerHTML =
         `<span class="strong"> Månar: </span><span class="moons-style">${planetInfo.moons}</span>`;
-
-
+       
         let moonSpace = ". ";
         let moonInfo = `<span class="moons-title"> Månar: </span>`;
         let moonButton = document.getElementById("moon-view-more");
@@ -208,17 +200,17 @@ function planetInformation(data) {
         let moonContainer = document.getElementById("distance-moons-info-container");
         let showAll = false;
         
-  
+        /* Funktion för månfältet.
+        Om planeten har fler än 3 månar så dyker en "se fler" knapp upp.  */
         function renderMoons() {
             moonInfo = `<span class="moons-title"> Månar: </span>`;
             let moonsToShow = showAll ? planetInfo.moons : planetInfo.moons.slice(0, 3);
-        
+            
             moonsToShow.forEach(moon => {
                 moonInfo += `<span class="moons-style">${moon}${moonSpace}</span>`;
             });
-        
+            
             planetMoons.innerHTML = moonInfo;
-        
             if (!showAll && planetInfo.moons.length > 3) {
                 moonButton.style.display = "block";
             } else {
@@ -265,9 +257,6 @@ function planetInformation(data) {
         }
     });
 
-
-
-
         renderMoons();
         
 
@@ -306,6 +295,7 @@ function planetInformation(data) {
         }
      }
 
+     // Knappen ändrar index med +1
      function nextButton() {
         currentIndex += 1;
         if  (currentIndex >= data.bodies.length) { 
@@ -316,7 +306,7 @@ function planetInformation(data) {
         }  
     document.getElementById("next-button").addEventListener('click', nextButton);
 
-
+    // Knappen ändrar index med -1
     function prevButton() {
         if  (currentIndex === 0) { 
             currentIndex = 0;
@@ -425,7 +415,7 @@ function planetInformation(data) {
         const track = document.querySelector('.carousel-track');
         const items = document.querySelectorAll('.carousel-item');
         const itemWidth = items[0].offsetWidth; 
-
+            
          let currentMenuItem = 0;
          
     

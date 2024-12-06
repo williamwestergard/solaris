@@ -18,15 +18,11 @@
       href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="assets/css/responsive.css">
+    <link rel="stylesheet" href="assets/css/responsive.css" />
   </head>
   <body>
-
-
-
-
     <main>
-      
+      <!-- En svart overlay som sätter fokus på "navigera här" skylten -->
       <section id="intro-overlay" onclick="hideOverlay()"></section>
 
       <!-- Headern högst upp på sidan -->
@@ -47,19 +43,15 @@
             <span id="search-icon">
               <span class="search-icon-handle"></span>
             </span>
-         
 
-            <!-- En lista som visas när man använder sök funktionen  -->
+            <!-- En lista av planeterna som visas när man använder sök funktionen  -->
             <ul id="searchbar-list">
               <li><a id="solen">Solen</a></li>
               <li><a id="merkurius">Merkurius</a></li>
-
               <li><a id="venus">Venus</a></li>
               <li><a id="jorden">Jorden</a></li>
-
               <li><a id="mars">Mars</a></li>
               <li><a id="jupiter">Jupiter</a></li>
-
               <li><a id="saturnus">Saturnus</a></li>
               <li><a id="uranus">Uranus</a></li>
               <li><a id="neptunus">Neptunus</a></li>
@@ -79,35 +71,81 @@
           </section>
         </aside>
 
+        <!-- Main innehållet -->
         <section id="main-container">
           <section id="planet-container">
             <!-- Namn  -->
             <section id="name-container">
-               
               <section id="meny-desc-frame">
-              <section id="meny">
-              <section class="carousel-container">
-              <button id="menu-arrow-left" class="arrow-left"></button>
-              <section class="carousel">
-                <section class="carousel-track">
-                  <a id="carousel-solen" class="carousel-item" data-index="0">Solen </a>
-                  <a id="carousel-merkurius" class="carousel-item" data-index="1">Merkurius </a>
-                  <a id="carousel-venus" class="carousel-item" data-index="2">Venus </a>
-                  <a id="carousel-jorden" class="carousel-item" data-index="3">Jorden </a>
-                  <a id="carousel-mars" class="carousel-item" data-index="4">Mars </a>
-                  <a id="carousel-jupiter" class="carousel-item" data-index="5">Jupiter </a>
-                  <a id="carousel-saturnus" class="carousel-item" data-index="6">Saturnus </a>
-                  <a id="carousel-uranus" class="carousel-item" data-index="7">Uranus </a>
-                  <a id="carousel-neptunus" class="carousel-item" data-index="8">Neptunus </a>
+                <!-- Navigeringen -->
+                <section id="meny">
+                  <section class="carousel-container">
+                    <button id="menu-arrow-left" class="arrow-left"></button>
+                    <section class="carousel">
+                      <section class="carousel-track">
+                        <a
+                          id="carousel-solen"
+                          class="carousel-item"
+                          data-index="0"
+                          >Solen
+                        </a>
+                        <a
+                          id="carousel-merkurius"
+                          class="carousel-item"
+                          data-index="1"
+                          >Merkurius
+                        </a>
+                        <a
+                          id="carousel-venus"
+                          class="carousel-item"
+                          data-index="2"
+                          >Venus
+                        </a>
+                        <a
+                          id="carousel-jorden"
+                          class="carousel-item"
+                          data-index="3"
+                          >Jorden
+                        </a>
+                        <a
+                          id="carousel-mars"
+                          class="carousel-item"
+                          data-index="4"
+                          >Mars
+                        </a>
+                        <a
+                          id="carousel-jupiter"
+                          class="carousel-item"
+                          data-index="5"
+                          >Jupiter
+                        </a>
+                        <a
+                          id="carousel-saturnus"
+                          class="carousel-item"
+                          data-index="6"
+                          >Saturnus
+                        </a>
+                        <a
+                          id="carousel-uranus"
+                          class="carousel-item"
+                          data-index="7"
+                          >Uranus
+                        </a>
+                        <a
+                          id="carousel-neptunus"
+                          class="carousel-item"
+                          data-index="8"
+                          >Neptunus
+                        </a>
+                      </section>
+                    </section>
+                    <!-- Knappar för navigeringen -->
+                    <button id="menu-arrow-right" class="arrow-right"></button>
+                  </section>
                 </section>
               </section>
-              <button id="menu-arrow-right" class="arrow-right"></button>
-              </section>
-            </section>
-          </section>
 
-
-
+               <!-- Namn på planeten och latinska namnet -->
               <section id="planet-name"></section>
               <section id="planet-latin-name"></section>
             </section>
@@ -115,19 +153,19 @@
             <!-- Information -->
             <section id="planet-desc-frame">
               <p>information</p>
-            <section id="planet-desc"></section>
-          </section>
-
-          <section id="distance-circ-container">
-            <!-- Distans  -->
-            <section id="planet-distance">
-              <span class="strong">Distans:</span>
+              <section id="planet-desc"></section>
             </section>
-             <!-- Omkrets  -->
-          <section id="planet-circumference">
-            <span class="strong">Omkrets:</span>
-          </section>
-          </section>
+
+            <section id="distance-circ-container">
+              <!-- Distans  -->
+              <section id="planet-distance">
+                <span class="strong">Distans:</span>
+              </section>
+              <!-- Omkrets  -->
+              <section id="planet-circumference">
+                <span class="strong">Omkrets:</span>
+              </section>
+            </section>
             <section id="distance-moons-info-container">
               <!-- Antal månar  -->
               <section id="planet-moons">
@@ -135,13 +173,13 @@
               </section>
               <button id="moon-view-more">Se fler</button>
               <button id="moon-view-less">Dölj</button>
+            </section>
           </section>
 
-          </section>
-
-          <!-- Sektionen på höger sida.   -->
+          <!-- Sektionen på höger sida.  -->
           <section id="planets-frame-container">
             <section id="planet-frame">
+               <!-- Ändras beroende på om det är en stjärna eller planet -->
               <section id="planet-type">
                 <span class="strong">Typ:</span>
                 <span id="star-or-planet"></span>
@@ -163,61 +201,50 @@
                 <section id="merkurius-planet"></section>
               </section>
 
-                 <!-- Venus CSS -->
-                 <section id="venus-planet-css-container">
-                    <section id="venus-planet"></section>
-                  </section>
+              <!-- Venus CSS -->
+              <section id="venus-planet-css-container">
+                <section id="venus-planet"></section>
+              </section>
 
-                       <!-- Jorden CSS -->
-                 <section id="jorden-planet-css-container">
-                  <section id="jorden-planet">
-                    <section id="jorden-planet-land"></section>
-                    <section id="jorden-planet-water"></section>
-                  </section>
-                </section>
-      
-          <!-- Mars CSS -->
-          <section id="mars-planet-css-container">
-            <section id="mars-planet">
-            </section>
-          </section>
-
-              <!-- Jupiter CSS -->
-              <section id="jupiter-planet-css-container">
-                <section id="jupiter-planet">
+              <!-- Jorden CSS -->
+              <section id="jorden-planet-css-container">
+                <section id="jorden-planet">
+                  <section id="jorden-planet-land"></section>
+                  <section id="jorden-planet-water"></section>
                 </section>
               </section>
 
-                <!-- Saturnus CSS -->
-                <section id="saturnus-planet-css-container">
-                  <section id="saturnus-planet">
-                    <section id="saturnus-ring"></section>
-                  </section>
-                </section>
+              <!-- Mars CSS -->
+              <section id="mars-planet-css-container">
+                <section id="mars-planet"></section>
+              </section>
 
-                <!-- Uranus CSS -->
-                <section id="uranus-planet-css-container">
+              <!-- Jupiter CSS -->
+              <section id="jupiter-planet-css-container">
+                <section id="jupiter-planet"></section>
+              </section>
+
+              <!-- Saturnus CSS -->
+              <section id="saturnus-planet-css-container">
+                <section id="saturnus-planet">
+                  <section id="saturnus-ring"></section>
+                </section>
+              </section>
+
+              <!-- Uranus CSS -->
+              <section id="uranus-planet-css-container">
                 <section id="uranus-planet">
                   <section id="uranus-ring"></section>
                 </section>
               </section>
 
-                <!-- Neputunus CSS -->
-                <section id="neptunus-planet-css-container">
-                  <section id="neptunus-planet">
-                  </section>
-                </section>
-        
-      
-  
+              <!-- Neputunus CSS -->
+              <section id="neptunus-planet-css-container">
+                <section id="neptunus-planet"></section>
+              </section>
 
-
-        
-              
-
-            <!-- Omloppsperiod  -->
-            <section id="planet-orbital-period">
-            </section>
+              <!-- Omloppsperiod  -->
+              <section id="planet-orbital-period"></section>
 
               <section id="planet-temperature">
                 <span class="strong temp"> </span>
@@ -229,17 +256,25 @@
                 </section>
               </article>
 
-              <!-- Styling på ramen   -->
+              <!-- Styling på ramen -->
               <article id="planet-frame-border-lower-left"></article>
 
-              <!-- Navigeringspilarna på högra sidan  -->
+              <!-- Navigeringspilarna på högra sidan -->
               <section id="planet-next-prev-container">
-                <article id="popup" onclick="hideOverlay2()">Navigera här
+                 <!-- Popup fält som dyker upp efter att man laddat sidan -->
+                <article id="popup" onclick="hideOverlay2()">
+                  Navigera här
                   <article id="arrow-down-popup"></article>
-
                 </article>
-                <article id="prev-button" class="prev-button-carousel"></article>
-                <article id="next-button"  class="next-button-carousel"></article>
+                <!-- Knapparna som bläddrar mellan planeterna -->
+                <article
+                  id="prev-button"
+                  class="prev-button-carousel"
+                ></article>
+                <article
+                  id="next-button"
+                  class="next-button-carousel"
+                ></article>
               </section>
             </section>
           </section>
@@ -257,13 +292,13 @@
     </main>
 
 
-    <script> 
 
-    setTimeout(() => {
-      document.getElementById("intro-overlay").style.display = "block";
-      document.getElementById("popup").style.display = "block";
-    }, "1000");
-
+    <script>
+      // Kod för att få "navigera här" fältet att dyka upp.
+      setTimeout(() => {
+        document.getElementById("intro-overlay").style.display = "block";
+        document.getElementById("popup").style.display = "block";
+      }, "1000");
 
       function hideOverlay() {
         document.getElementById("intro-overlay").style.display = "none";
@@ -273,8 +308,6 @@
         document.getElementById("intro-overlay").style.display = "none";
         document.getElementById("popup").style.display = "none";
       }
-
-
     </script>
     <script src="assets/scripts/planets.js"></script>
     <script src="assets/scripts/searchbar.js"></script>

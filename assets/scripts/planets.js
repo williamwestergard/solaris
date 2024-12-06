@@ -440,6 +440,7 @@ function planetInformation(data) {
             if (currentMenuItem < items.length - 4) {
                 currentMenuItem++;
                 document.getElementById("popup").style.display = "none";
+                document.getElementById("intro-overlay").style.display = "none";
                 updateCarousel();
             }
             else if (currentIndex === 8) {

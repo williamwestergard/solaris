@@ -60,6 +60,54 @@ function planetInformation(data) {
             else {
                 document.getElementById("venus-planet-css-container").style.display="none";
             }
+            //Jorden
+            if (currentIndex === 3) {
+                document.getElementById("jorden-planet-css-container").style.display="block";
+            } 
+            else {
+                document.getElementById("jorden-planet-css-container").style.display="none";
+            }
+            //Mars
+            if (currentIndex === 4) {
+            document.getElementById("mars-planet-css-container").style.display="block";
+             } 
+            else {
+                document.getElementById("mars-planet-css-container").style.display="none";
+            }
+              //Jupiter
+              if (currentIndex === 5) {
+                document.getElementById("jupiter-planet-css-container").style.display="block";
+                 } 
+                else {
+                    document.getElementById("jupiter-planet-css-container").style.display="none";
+                }
+            //Saturnus
+              if (currentIndex === 6) {
+                document.getElementById("saturnus-planet-css-container").style.display="block";
+                 } 
+                else {
+                    document.getElementById("saturnus-planet-css-container").style.display="none";
+                }
+            //Uranus
+              if (currentIndex === 7) {
+                document.getElementById("uranus-planet-css-container").style.display="block";
+                 } 
+                else {
+                    document.getElementById("uranus-planet-css-container").style.display="none";
+                }
+            //Neptunus
+            if (currentIndex === 8) {
+                document.getElementById("neptunus-planet-css-container").style.display="block";
+                 } 
+                else {
+                    document.getElementById("neptunus-planet-css-container").style.display="none";
+                }
+
+            
+
+
+
+
             
             
             // Menyns länkar ändrar font-weight om de är aktiva.

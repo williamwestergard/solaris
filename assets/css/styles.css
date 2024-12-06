@@ -265,7 +265,7 @@ h2 {
   letter-spacing: 13px;
   position: relative;
   left:3vw;
-  top:-3vh;
+  top:-5vh;
 }
 #planet-latin-name {
   text-transform: uppercase;
@@ -275,7 +275,7 @@ h2 {
   font-weight: 400;
   position: relative;
   left:3vw;
-  top:-3.3vh;
+  top:-5.3vh;
 }
 
 #planet-desc {
@@ -726,7 +726,6 @@ right:0vw;
 
 #meny-desc-frame {
   overflow: hidden;
-  border:1px solid white;
   position: absolute;
   top:-14vh;
   right:-5.4vw;
@@ -739,7 +738,6 @@ right:0vw;
   letter-spacing: 3px;
 }
 #meny {
-  border:1px solid white;
   padding:2.5vh;
 }
 
@@ -751,7 +749,7 @@ right:0vw;
   overflow: hidden;
   width:28vw;
   position: relative;
-  left:-.5vw;
+  left:0vw;
 }
 
 .carousel {

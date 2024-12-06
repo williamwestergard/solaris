@@ -497,9 +497,7 @@ right:0vw;
 
 
 #distance-moons-info-container {
-  overflow-x: auto;
-  scrollbar-color: rgb(207, 207, 207) rgba(34, 34, 34, 0.188);
-  scrollbar-width: thin;
+  overflow: hidden;
   z-index: 10000;
   border:1px solid white;
   padding:1vh 1vw ;
@@ -507,23 +505,53 @@ right:0vw;
   border-radius: 15px;
   letter-spacing: 5px;
   width:30vw;
+  height:5vh;
+  position: relative;
   display: flex;
   flex-direction: row;
   justify-content: flex-start;
   align-items: center;
   align-content: center;
-  background-color: black;
-  
+  background-color: black; 
 }
+
 .moons-title {
   font-size: clamp(.6rem, .8vw, .9rem);
   font-weight: 400;
 }
 .moons-style {
+  overflow: auto;
   font-weight: 200;
   font-size:clamp(.6rem, .8vw, .9rem);
   letter-spacing: 1px;
 }
+.moons-style-longer {
+  font-weight: 200;
+  font-size:clamp(.6rem, .8vw, .8rem);
+  letter-spacing: 1px;
+}
+#moon-view-more, #moon-view-less {
+  display:none;
+  z-index: 100000000;
+  position: absolute;
+  right:1vw;
+  border:1px solid white;
+  color:white;
+  text-transform: uppercase;
+  font-size:clamp(.6rem, 2vw, .8rem);
+  letter-spacing: 1px;
+  padding:.5vh 1vw;
+  background:black;
+  transition: .1s;
+}
+#moon-view-more:hover,#moon-view-less:hover {
+  cursor:pointer;
+  background-color: rgb(30, 30, 30);
+  color:rgb(200, 200, 200);
+  transition: .1s;
+}
+
+
 
 #distance-circ-container {
   z-index: 1000000;

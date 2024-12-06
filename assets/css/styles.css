@@ -317,8 +317,8 @@ right:0vw;
 }
 #planet-frame {
   position: relative;
-  width:clamp(490px, 30vw, 720px);
-  height:clamp(460px, 21vw, 630px);
+  width:clamp(490px, 42vw, 720px);
+  height:clamp(460px, 37vw, 610px);
   border:2px solid white;
   display: flex;
   flex-direction: column;

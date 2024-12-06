@@ -202,6 +202,24 @@ right:0vw;
 	border-right: 6.7vw solid #ffffff;
 	border-bottom: 4.9vw solid transparent;
 }
+#prev-button:hover {
+  cursor:pointer;
+  border-top: 4.9vw solid transparent;
+	border-right: 6.7vw solid #ffffff;
+	border-bottom: 4.9vw solid transparent;
+  transition: .2s;
+}
+#next-button:hover {
+  cursor:pointer;
+  border-top: 4.9vw solid transparent;
+	border-left: 6.7vw solid #ffffff;
+	border-bottom: 4.9vw solid transparent;
+  transition: .2s;
+}
+
+
+
+
 
 #popup {
   display:none;

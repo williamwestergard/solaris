@@ -280,7 +280,7 @@ h2 {
 }
 
 #planet-desc {
-  overflow: scroll; 
+  overflow: auto; 
   scrollbar-color: rgb(207, 207, 207) rgba(34, 34, 34, 0.188);
   scrollbar-width: thin;
   font-size:clamp(.7rem, .93vw, 1rem);

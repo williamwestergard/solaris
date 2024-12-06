@@ -593,7 +593,7 @@ right:0vw;
   border:1px solid white;
   color:white;
   text-transform: uppercase;
-  font-size:clamp(.6rem, .5vw, .8rem);
+  font-size:clamp(.6rem, .7vw, .7rem);
   letter-spacing: 1px;
   padding:.5vh 1vw;
   background:black;
@@ -619,7 +619,7 @@ right:0vw;
 #planet-circumference {
   text-transform: uppercase;
   padding:.2vh 1vh;
-  font-size:clamp(.4rem, .8vw, .7rem);
+  font-size:clamp(.4rem, .8vw, .8rem);
   letter-spacing: 2px;
   right:0;
   text-align: right;
@@ -627,7 +627,7 @@ right:0vw;
 #planet-distance {
   text-transform: uppercase;
   padding:.2vh 1vh;
-  font-size:clamp(.4rem, .8vw, .7rem);
+  font-size:clamp(.4rem, .8vw, .8rem);
   letter-spacing: 2px;
   right:0;
   text-align: left;
@@ -697,7 +697,7 @@ right:0vw;
   margin:auto;
   position:absolute;
   top:1vh;
-  left:3vw;
+  left:4vw;
   transition: .3s;
 }
 #sun-planet-outer-ring {
@@ -779,6 +779,174 @@ right:0vw;
   box-shadow: 0px 0px 18px #a9a8a80d, inset 0px 0px 20px #000000, 0px 0px 58px #82828209;
   margin:auto;
 }
+
+
+/* Jorden */
+#jorden-planet-css-container {
+  display:none;
+  margin:auto;
+  position:absolute;
+  top:19.5vh;
+  left:13.5vw;
+}
+#jorden-planet {
+  overflow: hidden;
+  width:25vh;
+  height:25vh;
+  background: linear-gradient(140deg, rgba(49, 101, 211, 0.853) 20%, #000000 72%);
+  background-color: #212f8c;
+  border-radius:100%;
+  box-shadow: 0px 0px 18px #a9a8a80d, inset -2px -2px 15px #fcfbfb38, 0px 0px 58px #2a48994f;
+  margin:auto;
+}
+#jorden-planet-land {
+  z-index:2;
+  width:18vh;
+  height:22vh;
+  background: rgb(124, 177, 89);
+  background: linear-gradient(125deg, rgba(36,102,83,1) 0%, rgba(47,80,49,1) 100%);
+  border-radius:100%;
+  box-shadow: 0px 0px 18px #a9a8a80d, inset 20px 10px 15px #f2e1e1, 0px 0px 12px #06091035;
+  margin:auto;
+  position:relative;
+  mix-blend-mode: darken;
+  top:-3vh;
+  left:0vw;
+}
+#jorden-planet-water {
+  z-index:1;
+  width:25vh;
+  height:30vh;
+  background: rgb(86,122,152);
+  background: linear-gradient(135deg, rgba(86,122,152,1) 0%, rgb(151, 162, 202) 44%, rgb(141, 152, 198) 74%, rgb(116, 120, 145) 100%);border-radius:100%;
+  box-shadow: 0px 0px 18px #939393, inset 20px 10px 15px #b7b7b7, 0px 0px 12px #a1b3e0fd;
+  margin:auto;
+  position:relative;
+  mix-blend-mode: color-dodge;
+  filter:blur(100%);
+  opacity: 30%;
+  top:-26vh;
+  left:-2vw;
+}
+
+
+/* Mars */
+#mars-planet-css-container {
+  display:none;
+  margin:auto;
+  position:absolute;
+  top:22vh;
+  left:15vw;
+}
+#mars-planet {
+  width:18vh;
+  height:18vh;
+  background: rgb(241, 105, 64);
+  background: linear-gradient(117deg, rgb(240, 102, 61) 0%, rgb(27, 11, 7) 70%);
+  border-radius:100%;
+  box-shadow: 0px 0px 18px #a9a8a80d, inset 0px 0px 20px #e9c78f, 0px 0px 58px #db41363a;
+  margin:auto;
+}
+
+/* Jupiter */
+#jupiter-planet-css-container {
+  display:none;
+  margin:auto;
+  position:absolute;
+  top:17vh;
+  left:12vw;
+}
+#jupiter-planet {
+  width:30vh;
+  height:30vh;
+ background: rgb(246,228,184);
+background: linear-gradient(173deg, rgba(246,228,184,1) 10%, rgba(171, 136, 97, 0.88) 21%, rgb(211, 196, 157) 37%, rgba(130, 69, 52, 0.834) 55%, rgba(246,228,184,1) 73%, rgba(85,40,28,1) 100%);
+border-radius:100%;
+  box-shadow: 0px 0px 18px #a9a8a80d, inset -10px -10px 20px #240b09, inset 10px 10px 10px #fff0dfa9, 0px 0px 58px #dbb7863a;
+  margin:auto;
+}
+
+/* Saturnus */
+#saturnus-planet-css-container {
+  display:none;
+  margin:auto;
+  position:absolute;
+  top:20vh;
+  left:13vw;
+}
+#saturnus-planet {
+  width:25vh;
+  height:25vh;
+ background: rgb(227, 202, 139);
+background: linear-gradient(140deg, rgb(221, 199, 148) 10%, rgba(202, 164, 119, 0.88) 21%, rgb(188, 170, 123) 37%, rgba(170, 128, 101, 0.834) 55%, rgb(198, 181, 136) 73%, rgb(65, 40, 32) 100%);
+border-radius:100%;
+  box-shadow: 0px 0px 18px #a9a8a80d, inset -10px -10px 20px #240b09, inset 10px 10px 10px #fffddf8b, 0px 0px 28px #fdebd114;
+  margin:auto;
+}
+#saturnus-ring {
+  width:45vh;
+  height:2.3vh;
+  background: rgb(232, 217, 181);
+ box-shadow: 0px 0px 18px #d7d0d04a, inset -10px -10px 20px #3e2818, inset 10px 10px 10px #fffddf8b, 0px 0px 28px #fdebd11a;
+  border-radius:100%;
+  margin:auto;
+  position:absolute;
+  top:12vh;
+  left:-4.5vw;
+  mix-blend-mode: lighten;
+  transform: rotate(-30deg);
+}
+
+/* Uranus */
+#uranus-planet-css-container {
+  display:none;
+  margin:auto;
+  position:absolute;
+  top:21vh;
+  left:14vw;
+}
+#uranus-planet {
+  width:22vh;
+  height:22vh;
+  background: rgb(93,208,255);
+  background: linear-gradient(176deg, rgba(93,208,255,1) 2%, rgba(12,27,71,1) 98%);
+border-radius:100%;
+  box-shadow: 0px 0px 18px #a9a8a805, inset -10px -10px 20px #120924, inset 10px 10px 10px #dffff58b, 0px 0px 48px #5bacef80;
+  margin:auto;
+}
+#uranus-ring {
+  width:35vh;
+  height:1.1vh;
+  background: rgb(234, 231, 224);
+ box-shadow: 0px 0px 18px #d0d3d74a, inset -10px -10px 20px #34425c, inset 10px 10px 10px #fffddf8b, 0px 0px 28px #d1c0a941;
+  border-radius:100%;
+  margin:auto;
+  position:absolute;
+  top:11vh;
+  left:-3vw;
+  mix-blend-mode: lighten;
+  transform: rotate(-30deg);
+}
+
+/* Neptunus */
+#neptunus-planet-css-container {
+  display:none;
+  margin:auto;
+  position:absolute;
+  top:22vh;
+  left:14vw;
+}
+#neptunus-planet {
+  width:21vh;
+  height:21vh;
+  background: rgb(93,208,255);
+  background: linear-gradient(145deg, rgb(84, 205, 253) 2%, rgb(5, 12, 33) 72%);
+border-radius:100%;
+  box-shadow: 0px 0px 18px #2139462c, inset -10px -10px 50px #11117b, inset 10px 10px 10px #dffff58b, 0px 0px 15px #2195f4cb;
+  margin:auto;
+}
+
+
 
 
 

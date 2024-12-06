@@ -145,9 +145,9 @@ function planetInformation(data) {
         planetLatinNames.innerHTML = planetInfo.latinName;
     
         planetDistance.innerHTML =
-        `<span class="strong"> Distans: </span>${planetInfo.distance}</span>`;
+        `<span class="strong-distance"> Distans: </span>${planetInfo.distance}</span>`;
         planetCircumference.innerHTML =
-        `<span class="strong"> Omkrets: </span>${planetInfo.circumference}</span>`;
+        `<span class="strong-distance"> Omkrets: </span>${planetInfo.circumference}</span>`;
 
         planetMoons.innerHTML =
         `<span class="strong"> Månar: </span><span class="moons-style">${planetInfo.moons}</span>`;
@@ -163,7 +163,7 @@ function planetInformation(data) {
   
         function renderMoons() {
             moonInfo = `<span class="moons-title"> Månar: </span>`;
-            let moonsToShow = showAll ? planetInfo.moons : planetInfo.moons.slice(0, 4);
+            let moonsToShow = showAll ? planetInfo.moons : planetInfo.moons.slice(0, 3);
         
             moonsToShow.forEach(moon => {
                 moonInfo += `<span class="moons-style">${moon}${moonSpace}</span>`;
@@ -171,7 +171,7 @@ function planetInformation(data) {
         
             planetMoons.innerHTML = moonInfo;
         
-            if (!showAll && planetInfo.moons.length > 4) {
+            if (!showAll && planetInfo.moons.length > 3) {
                 moonButton.style.display = "block";
             } else {
                 moonButton.style.display = "none";
@@ -180,7 +180,8 @@ function planetInformation(data) {
         
         moonButton.addEventListener("click", () => {
             showAll = true;
-            moonContainer.style.height="20vh";
+            moonContainer.style.border="1px solid white";
+            moonContainer.style.height="22vh";
             moonContainer.style.top="-15vh";
             moonButtonHideContent.style.display = "block";
             moonButtonHideContent.style.top = "1vh";
@@ -189,6 +190,7 @@ function planetInformation(data) {
         
         moonButtonHideContent.addEventListener("click", () => {
         showAll = false;
+        moonContainer.style.border="none";
         moonContainer.style.height="5vh";
         moonContainer.style.top="0vh";
         moonButtonHideContent.style.display = "none";
@@ -202,6 +204,7 @@ function planetInformation(data) {
 
         if (!moonContainer.contains(event.target) &&  showAll === true) {
             showAll = false;
+            moonContainer.style.border="none";
             moonButtonHideContent.style.display = "none";
             moonButton.style.display = "block";
             moonContainer.style.height="5vh";
@@ -388,6 +391,7 @@ function planetInformation(data) {
         function moveRightNextButton() {
             if (currentMenuItem < items.length - 4) {
                 currentMenuItem++;
+                document.getElementById("popup").style.display = "none";
                 updateCarousel();
             }
             else if (currentIndex === 8) {
@@ -444,6 +448,6 @@ function planetInformation(data) {
              track.style.transform = `translateX(${offset}px)`;
            }
 
+
     }
     
-

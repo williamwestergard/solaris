@@ -1,11 +1,12 @@
 @media all and (min-width:1200px) {
+
     #planet-frame {
       width:clamp(490px, 38vw, 720px);
-      height:clamp(360px, 32vw, 610px);
+      height:clamp(370px, 35vw, 610px);
       }
 
       #planet-frame-border-lower-left {
-        bottom:-2.9vh;
+        bottom:-3-1vh;
         left:-4.2vh;
       }
       #search-icon {
@@ -25,9 +26,73 @@
         height:clamp(5px, .5vw, 9px);
         background-color: white;
         transform: rotate(-32deg);
-      }
-      
+      }  
 }
+@media all and (min-width:1850px) {
+
+
+    #planet-frame-border-lower-left {
+      bottom:-2.9vh;
+      left:-4.2vh;
+    }
+    #planet-desc {
+      overflow: auto; 
+      scrollbar-color: rgb(207, 207, 207) rgba(34, 34, 34, 0.188);
+      scrollbar-width: thin;
+      font-size:clamp(.6rem, .8vw, 1rem);
+      line-height: 2.9vh;
+      padding:3vh 5vh;
+      width:30vw;
+      height:25vh;
+    }
+    #popup {
+      display:none;
+      z-index:10;
+      height:auto;
+      padding:1vw 2.3vh;
+      text-transform: uppercase;
+      font-size: clamp(.6rem, .8vw, 1rem);
+      letter-spacing: 1px;
+      font-weight: 700;
+      text-align: center;
+      position: absolute;
+      top:-7.5vh;
+      left:-2.8vw;
+      background-color: rgb(156, 156, 156);
+      color:black;
+      animation:popUpAnimation 2s infinite;
+    }
+    @keyframes popUpAnimation {
+      0% {filter:brightness(100%);}
+      50% {filter:brightness(150%);}
+      100% {filter:brightness(100%);}
+    }
+    #arrow-down-popup {
+        z-index:10;
+        width: 0;
+        height: 0;
+        margin-left:1.55vw;
+        margin-top: 2.5vh;
+        border-left:  .7vw solid transparent;
+        border-top: 1.2vw  solid rgb(156, 156, 156);
+        border-right: .7vw solid transparent;
+        position: absolute;
+        bottom:-2.1vh;
+        right:1.5vw;
+      }
+      #box-container{
+        display:flex;
+        flex-direction: column;
+        align-self: center;
+        justify-content: center;
+        bottom:clamp(2vh, 2vw, 4.3vh);
+        padding:1vh;
+        width:5vw;
+        border-top:1px solid white;
+        position: absolute;
+      }
+  }
+
 
 
 /* Responsivt för mobil storlekar */

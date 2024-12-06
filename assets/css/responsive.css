@@ -408,6 +408,10 @@ right:0vw;
 display:none;
 }
 
+.smaller-title {
+  font-size:clamp(2.6rem, 4.7vw, 4rem);
+  letter-spacing: clamp(0px, 0.3vw, 5px);
+}
 
 
 

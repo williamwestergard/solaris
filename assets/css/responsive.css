@@ -2,7 +2,7 @@
 
     #planet-frame {
       width:clamp(510px, 40vw, 720px);
-      height:clamp(420px, 37vw, 610px);
+      height:clamp(410px, 36vw, 610px);
       }
 
       #planet-frame-border-lower-left {

@@ -1,8 +1,8 @@
 @media all and (min-width:1200px) {
 
     #planet-frame {
-      width:clamp(490px, 38vw, 720px);
-      height:clamp(400px, 32vw, 610px);
+      width:clamp(510px, 40vw, 720px);
+      height:clamp(420px, 37vw, 610px);
       }
 
       #planet-frame-border-lower-left {
@@ -31,6 +31,10 @@
 @media all and (min-width:1850px) {
 
 
+  #planet-frame {
+    width:clamp(490px, 38vw, 720px);
+    height:clamp(400px, 32vw, 610px);
+    }
 
     #planet-frame-border-lower-left {
       bottom:-2.9vh;

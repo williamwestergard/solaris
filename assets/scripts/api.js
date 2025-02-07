@@ -2,7 +2,7 @@
 // Hämtar informationen från en API
 async function fetchData(callback) {
     try{
-        let response = await fetch('https://n5n3eiyjb0.execute-api.eu-north-1.amazonaws.com/bodies', {
+        let response = await fetch(' https://i4kif2xfk7.execute-api.eu-north-1.amazonaws.com/bodies', {
             method: 'GET',
             headers: {'x-zocom': 'solaris-BHRyCR5Lgznl28Tr'}
         })

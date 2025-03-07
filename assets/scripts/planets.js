@@ -1,4 +1,4 @@
-fetch("/db.json")
+fetch("./db.json")
   .then((response) => response.json())
   .then((data) => {
     planetInformation(data); // Call your function with the fetched data
